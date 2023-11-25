@@ -5,20 +5,35 @@ xws_title='--------------------
 --------------------'
 
 list_packages=(
+    intel-ucode
     xorg-minimal
     xf86-input-synaptics
     xf86-video-intel
     linux-firmware
     setxkbmap
     xrandr
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-user-dirs
+    xdg-user-dirs-gtk
+    xdg-utils
     dbus
     dbus-x11
     polkit
     polkit-elogind
     elogind
+    xfce-polkit
     noto-fonts-ttf
     terminus-font
+    font-hack-ttf
+    picom
+    gnome-themes-extra
+    graybird-themes
+    papirus-icon-theme
+    papirus-folder
     base-devel
+    sakura
+    ufw
     keepassxc
     firefox
     nemo
@@ -26,22 +41,32 @@ list_packages=(
     gvfs-mtp
     file-roller
     nemo-fileroller
+    atril
     curl
-    lynx
     wget
+    lynx
+    w3m
+    w3m-img
+    ranger
     git
+    pulseaudio
+    pavucontrol
+    pamixer
+    dunst
+    bash-completion
     htop
     neofetch
     neovim
     p7zip
     unzip
     zip
-    font-hack-ttf
+    unrar
     gimp
     sxiv
     mpv
     mupdf
     ncdu
+    fzf
 )
 
 _exit() {
