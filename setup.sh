@@ -103,5 +103,9 @@ cd ../dwmblocks && make && sudo make clean install
 
 echo
 
+echo -e 'Copy settings to .config...\n'
+cd ~/.xwdots
+mkdir -p ~/.config
+cp -r config/* ~/.config/
 
 
