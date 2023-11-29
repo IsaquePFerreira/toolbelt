@@ -91,3 +91,17 @@ else
     exit 1
 fi
 
+echo -e 'Install dwm, dmenu, dwmblocks...\n'
+mkdir -p ~/.suckless
+cd ~/.suckless
+git clone url_dwm
+git clone url_dmenu
+git clone url_dwmblocks
+cd dwm && make && sudo make clean install
+cd ../dmenu && make && sudo make clean install
+cd ../dwmblocks && make && sudo make clean install
+
+echo
+
+
+
