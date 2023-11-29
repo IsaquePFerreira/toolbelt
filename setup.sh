@@ -99,6 +99,6 @@ cp -r config/* $HOME/.config/
 
 echo -e 'Copy hidden files of home...\n'
 for f in home/*; do
-    cp -R $f "$HOME/.${f##*/}"
+    cp -r $f "$HOME/.${f##*/}"
 done
 
