@@ -82,7 +82,7 @@ package_list=(
 )
 
 echo -e 'Install some packages...\n'
-sudo xbps-install -S --dry-run ${package_list[@]}
+sudo xbps-install -Sy --dry-run ${package_list[@]}
 
 if [[ $? == 0 ]]; then
     echo -e '\nComplete package install!\n'
@@ -90,16 +90,6 @@ else
     echo -e '\nError! Exiting...\n'
     exit 1
 fi
-
-echo -e 'Install dwm, dmenu, dwmblocks...\n'
-mkdir -p ~/.suckless
-cd ~/.suckless
-git clone url_dwm
-git clone url_dmenu
-git clone url_dwmblocks
-cd dwm && make && sudo make clean install
-cd ../dmenu && make && sudo make clean install
-cd ../dwmblocks && make && sudo make clean install
 
 echo
 
