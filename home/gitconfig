@@ -1,0 +1,7 @@
+[user]
+    email = 92412320+IsaquePFerreira@users.noreply.github.com
+    name = IsaquePFerreira
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = ~/.gitignore
