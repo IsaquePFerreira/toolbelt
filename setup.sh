@@ -6,7 +6,7 @@ echo -e 'Update system...\n'
 sudo xbps-install -Suy
 
 if [[ $? == 0 ]]; then
-    echo -e '\nComplete system update!'
+    echo -e '\nComplete system update!\n'
 else
     echo -e '\nError! Exiting...\n'
     exit 1
@@ -81,12 +81,13 @@ package_list=(
     fzf
 )
 
-echo -e '\nInstall some packages...\n'
+echo -e 'Install some packages...\n'
 sudo xbps-install -S --dry-run ${package_list[@]}
 
 if [[ $? == 0 ]]; then
-    echo -e '\nComplete package install!'
+    echo -e '\nComplete package install!\n'
 else
     echo -e '\nError! Exiting...\n'
     exit 1
 fi
+
