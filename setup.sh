@@ -108,4 +108,9 @@ cd ~/.xwdots
 mkdir -p ~/.config
 cp -r config/* ~/.config/
 
+echo -e 'Create symbolic links to home files...\n'
+ln -s ~/.xwdots/home/bashrc ~/.bashrc
+ln -s ~/.xwdots/home/bash_aliases ~/.bash_aliases
+ln -s ~/.xwdots/home/gitconfig ~/.gitconfig
+ln -s ~/.xwdots/home/gitignore ~/.gitignore
 
