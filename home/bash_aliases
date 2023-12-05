@@ -1,0 +1,18 @@
+alias ls="ls --color=auto"
+alias l="ls --color=auto"
+alias la="ls -a --color=auto"
+alias ll="ls -l --color=auto"
+alias lal="ls -al --color=auto"
+alias l.="ls -A | egrep '^\.'"
+
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+alias wget="wget -c"
+
+# alias tmux="tmux new -s"
+
+alias vi="nvim"
+alias viu="nvim -u NONE"
+alias vim="vim-normal"
