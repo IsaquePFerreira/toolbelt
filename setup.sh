@@ -1,5 +1,7 @@
 #!/bin/bash
 
+testing='--dry-run'
+
 clear
 
 echo -e 'Update system...\n'
@@ -74,7 +76,7 @@ package_list=(
     zip
     unrar
     gimp
-    sxiv
+    nsxiv
     mpv
     mupdf
     ncdu
@@ -82,7 +84,7 @@ package_list=(
 )
 
 echo -e 'Install some packages...\n'
-sudo xbps-install -Sy --dry-run ${package_list[@]}
+sudo xbps-install -Sy $testing ${package_list[@]}
 
 if [[ $? == 0 ]]; then
     echo -e '\nComplete package install!\n'
