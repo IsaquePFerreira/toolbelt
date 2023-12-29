@@ -14,77 +14,10 @@ else
     exit 1
 fi
 
-package_list=(
-    intel-ucode
-    xorg-minimal
-    xf86-input-synaptics
-    xf86-video-intel
-    linux-firmware
-    libX11-devel
-    libXft-devel
-    libXinerama-devel
-    setxkbmap
-    xrandr
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
-    xdg-user-dirs
-    xdg-user-dirs-gtk
-    xdg-utils
-    dbus
-    dbus-x11
-    polkit
-    polkit-elogind
-    elogind
-    xfce-polkit
-    noto-fonts-ttf
-    font-awesome6
-    terminus-font
-    font-hack-ttf
-    picom
-    gnome-themes-extra
-    greybird-themes
-    papirus-icon-theme
-    papirus-folders
-    base-devel
-    sakura
-    ufw
-    keepassxc
-    firefox
-    nemo
-    gvfs
-    gvfs-mtp
-    file-roller
-    nemo-fileroller
-    atril
-    curl
-    wget
-    lynx
-    w3m
-    w3m-img
-    ranger
-    git
-    pulseaudio
-    pavucontrol
-    pamixer
-    dunst
-    bash-completion
-    htop
-    neofetch
-    neovim
-    p7zip
-    unzip
-    zip
-    unrar
-    gimp
-    nsxiv
-    mpv
-    mupdf
-    ncdu
-    fzf
-)
+packages=$(sed -e '/^\s*#/g' -e '/^\s*$/g' packages.txt | tr '\n' ' ')
 
 echo -e 'Install some packages...\n'
-sudo xbps-install -Sy $testing ${package_list[@]}
+sudo xbps-install -Sy $testing ${packages[@]}
 
 if [[ $? == 0 ]]; then
     echo -e '\nComplete package install!\n'
@@ -95,12 +28,14 @@ fi
 
 echo
 
-echo -e 'Copy settings to .config...\n'
-mkdir -p $HOME/.config
-cp -r config/* $HOME/.config/
-
-echo -e 'Copy hidden files of home...\n'
-for f in home/*; do
-    cp -r $f "$HOME/.${f##*/}"
-done
-
+# echo -e 'Copy settings to .config...\n'
+# mkdir -p $HOME/.config
+# cp -r config/* $HOME/.config/
+# 
+# echo -e 'Copy hidden files of home...\n'
+# for f in home/*; do
+#     cp -r $f "$HOME/.${f##*/}"
+# done
+# 
+# echo -e 'Create user folders...\n'
+# xdg-user-dirs-update

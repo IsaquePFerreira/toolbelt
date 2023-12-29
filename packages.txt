@@ -1,0 +1,76 @@
+# Intel
+intel-ucode
+# Xorg
+xorg-minimal
+xf86-input-synaptics
+xf86-video-intel
+#
+dbus
+dbus-x11
+polkit
+polkit-elogind
+elogind
+# Bspwm setup
+bspwm
+sxhkd
+rofi
+sakura
+neovim
+# XDG
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-user-dirs
+xdg-user-dirs-gtk
+xdg-utils
+# Fonts
+noto-fonts-ttf
+font-awesome6
+terminus-font
+font-hack-ttf
+# Appearance
+picom
+greybird-themes
+papirus-icon-theme
+papirus-folders
+# Apps
+firefox
+keepassxc
+pcmanfm
+gvfs
+gvfs-mtp
+file-roller
+atril
+mpv
+gimp
+# CLI
+curl
+wget
+lynx
+w3m
+w3m-img
+ranger
+htop
+neofetch
+bash-completion
+p7zip
+unzip
+zip
+unrar
+nsxiv
+mupdf
+ncdu
+fzf
+bat
+eza
+ufw
+# Audio
+pulseaudio
+pavucontrol
+pamixer
+# Notification
+dunst
+# Polkit
+xfce-polkit
+# Dev
+git
+base-devel
