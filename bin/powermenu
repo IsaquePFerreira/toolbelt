@@ -1,0 +1,34 @@
+#!/bin/bash
+
+opt1="Logout\nReiniciar\nDesligar"
+opt2="Sim\nNão"
+
+function ask {
+    answer="$(echo -e $1 | rofi -dmenu -p "$2")"
+}
+
+ask "$opt1" "Encerrar sessão"
+
+case $answer in
+    "Logout")
+        ask "$opt2" "Quer mesmo sair do bspwm?"
+        if [[ $answer == "Sim" ]]; then
+            bspc quit
+        fi
+        exit 0
+        ;;
+    "Reiniciar")
+        ask "$opt2" "Quer mesmo reiniciar o sistema?"
+        if [[ $answer == "Sim" ]]; then
+            loginctl reboot
+        fi
+        exit 0
+        ;;
+    "Desligar")
+        ask "$opt2" "Quer mesmo desligar o computador?"
+        if [[ $answer == "Sim" ]]; then
+            loginctl poweroff
+        fi
+        exit 0
+        ;;
+esac
