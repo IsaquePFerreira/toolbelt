@@ -37,10 +37,19 @@ for f in home/*; do
     cp -r $f "$HOME/.${f##*/}"
 done
 
+echo -e 'Source bash_xw...\n'
+echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> ~/.bashrc
+
+echo -e 'Copy bin folder...\n'
+cp -r bin ~/bin
+
 echo -e 'Create user folders...\n'
 xdg-user-dirs-update
 
-echo -e 'startx setup...\n'
+echo -e 'Startx setup...\n'
 echo 'exec dbus-launch --exit-with-session bspwm' >> ~/.xinitrc
+
+echo -e 'Setup complete...\n'
+read -p 'Press Enter to reboot...' continues
 
 sudo reboot
