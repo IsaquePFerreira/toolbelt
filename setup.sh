@@ -1,6 +1,6 @@
 #!/bin/bash
 
-testing='--dry-run'
+# testing='--dry-run'
 
 clear
 
@@ -28,14 +28,19 @@ fi
 
 echo
 
-# echo -e 'Copy settings to .config...\n'
-# mkdir -p $HOME/.config
-# cp -r config/* $HOME/.config/
-# 
-# echo -e 'Copy hidden files of home...\n'
-# for f in home/*; do
-#     cp -r $f "$HOME/.${f##*/}"
-# done
-# 
-# echo -e 'Create user folders...\n'
-# xdg-user-dirs-update
+echo -e 'Copy settings to .config...\n'
+mkdir -p $HOME/.config
+cp -r config/* $HOME/.config/
+
+echo -e 'Copy hidden files of home...\n'
+for f in home/*; do
+    cp -r $f "$HOME/.${f##*/}"
+done
+
+echo -e 'Create user folders...\n'
+xdg-user-dirs-update
+
+echo -e 'startx setup...\n'
+echo 'exec dbus-launch --exit-with-session bspwm' >> ~/.xinitrc
+
+sudo reboot
