@@ -1,0 +1,58 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+configuration {
+    display-drun: "Apps:";
+    modi: "run,drun";
+    drun-display-format: "{name}";
+    font: "Noto Sans Mono Medium 11";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #2D2F31;
+    bg-selected: #2DE72B;
+    fg: #FFFFFF;
+    fg-alt: @bg;
+
+    background-color: @bg;
+    border-color: @fg;
+    text-color: @fg;
+}
+
+window {
+    width: 35%;
+    padding: 4px;
+}
+
+listview {
+    spacing: 5px;
+    lines: 10;
+    column: 1;
+}
+
+entry {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element {
+    padding: 4px 4px;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @bg-selected;
+    text-color: @fg-alt;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+/* vim: ft=css
