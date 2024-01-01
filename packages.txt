@@ -17,6 +17,8 @@ rofi
 sakura
 neovim
 polybar
+slock
+nitrogen
 # XDG
 xdg-desktop-portal
 xdg-desktop-portal-gtk
