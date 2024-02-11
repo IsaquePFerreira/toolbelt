@@ -1,14 +1,9 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
+# Program launchers
 super + Return
 	sakura
 
-# program launcher
 super + d
-	rofi -show drun
+    rofi -show drun
 
 super + w
     firefox
@@ -16,37 +11,34 @@ super + w
 super + e
     pcmanfm
 
-# lock screen
-ctrl + super + l
+# Lock screen
+super + ctrl + l
     slock
 
-# powermenu
-super + shift + x
+# Powermenu
+super + shift + e
     powermenu
 
-# pulseaudio volume
+# Volume
 alt + Up
     volume-plus
 
 alt+ Down
     volume-minus
 
-# toggle bar
+# Toggle bar
 super + b
 	{polybar-msg cmd toggle; bspc config top_padding +0 ,\
          polybar-msg cmd toggle; bspc config top_padding 30 }
 
-# make sxhkd reload its configuration files:
+# SXHKD reload
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
-
+# BSPWM hotkeys
 # quit/restart bspwm
-super + shift + {e,r}
-	bspc {quit,wm -r}
+super + shift + r
+	bspc wm -r
 
 # close and kill
 super + shift + c
@@ -56,17 +48,9 @@ super + shift + c
 super + m
  	bspc desktop -l next
 
-#
-# state/flags
-#
-
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-#
-# focus/swap
-#
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -80,39 +64,9 @@ super + Tab
 super + ctrl + {Left,Right}
 	bspc desktop -f {prev,next}.local
 
-# focus the older or newer node in the focus history
-# super + {Tab,shift + Tab}
-# 	bspc wm -h off; \
-# 	bspc node {older,newer} -f; \
-# 	bspc wm -h on
-
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
