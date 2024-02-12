@@ -43,7 +43,7 @@ echo -e 'Source bash_xw...\n'
 echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> ~/.bashrc
 
 echo -e 'Copy bin folder...\n'
-cp -r bin ~/bin
+cp -r bin ~/.local/bin
 
 echo -e 'Create user folders...\n'
 xdg-user-dirs-update
