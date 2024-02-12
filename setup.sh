@@ -26,9 +26,11 @@ else
     exit 1
 fi
 
-echo
+clear
 
-echo -e 'Copy settings to .config...\n'
+echo 'Configure system...'
+
+echo -e '\nCopy settings to .config...\n'
 mkdir -p $HOME/.config
 cp -r config/* $HOME/.config/
 
