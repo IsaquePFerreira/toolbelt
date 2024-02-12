@@ -27,12 +27,12 @@ xdg-user-dirs-gtk
 xdg-utils
 # Fonts
 noto-fonts-ttf
+noto-fonts-ttf-extra
 font-awesome6
 terminus-font
-font-hack-ttf
 # Appearance
 picom
-greybird-themes
+yaru-plus
 papirus-icon-theme
 papirus-folders
 # Apps
