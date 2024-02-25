@@ -24,9 +24,9 @@ font-0 = "Terminus:style=Bold:size=11;2"
 font-1 = "Font Awesome 6 Free:style=solid:size=9;2"
 font-2 = "Font Awesome 6 Brands:style=bold:size=9;2"
 
-modules-left = bspwm 
-modules-center = date
-modules-right = systray void-updates memory pulseaudio
+modules-left = bspwm
+modules-center = xwindow
+modules-right = systray void-updates memory pulseaudio date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
