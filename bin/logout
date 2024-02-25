@@ -4,7 +4,7 @@ opt1="Logout\nReiniciar\nDesligar"
 opt2="Sim\nNão"
 
 function ask {
-    answer="$(echo -e $1 | rofi -dmenu -p "$2")"
+    answer="$(echo -e $1 | rofi -dmenu -i -p "$2")"
 }
 
 ask "$opt1" "Encerrar sessão"
