@@ -17,14 +17,14 @@ super + ctrl + l
 
 # Powermenu
 super + shift + e
-    powermenu
+    logout
 
 # Volume
 alt + Up
-    volume-plus
+    vol+
 
 alt+ Down
-    volume-minus
+    vol-
 
 # Toggle bar
 super + b
