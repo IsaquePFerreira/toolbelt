@@ -17,6 +17,7 @@ bspc config presel_feedback_color	      "#2DE72B"
 
 bspc rule -a Firefox desktop='^2'
 bspc rule -a mpv state=floating
+bspc rule -a Mousepad state=floating
 bspc rule -a Pcmanfm state=floating
 bspc rule -a Screenkey manage=off
 
