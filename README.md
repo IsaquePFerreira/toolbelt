@@ -17,14 +17,12 @@ my workstation(themes, icons, CLI tools, apps and more).
 I use Void Linux, like this:
 - Install the non-free repository
 - xbps to install packages
-- Package names may change from distro to distro
-- Feel free to make modifications for your use
 
 NOTE: The settings and scripts are intended for my personal use,
 
 so use at your own risk. Before using the files,
 
-test in the VM, modify, test again, then use on your machine.
+test in the VM, make the necessary changes, test again, then use on your machine.
 
 ### Installation
 
