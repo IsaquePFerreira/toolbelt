@@ -13,7 +13,7 @@ super + e
 
 # Lock screen
 super + ctrl + l
-    slock
+    betterlockscreen -l
 
 # Powermenu
 super + shift + e
