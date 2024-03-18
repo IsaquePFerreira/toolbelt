@@ -32,5 +32,7 @@ test in the VM, make the necessary changes, test again, then use on your machine
     ./setup.sh
 ```
 
+---
 
+Made with ❤ and Bash
 
