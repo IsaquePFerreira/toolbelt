@@ -2,7 +2,7 @@
 
 # xwdots
 
-My dotfiles and scripts for personal use -- use at your own risk
+My dotfiles and scripts for personal use -- use at your own risk.
 
 ## Introduction
 
@@ -28,7 +28,7 @@ test in the VM, modify, test again, then use on your machine.
 
 ### Installation
 
-```
+```sh
     git clone https://github.com/IsaquePFerreira/xwdots
     cd xwdots
     ./setup.sh
