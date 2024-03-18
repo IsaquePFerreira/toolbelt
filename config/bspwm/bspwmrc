@@ -19,6 +19,7 @@ bspc rule -a Firefox desktop='^2'
 bspc rule -a mpv state=floating
 bspc rule -a Mousepad state=floating
 bspc rule -a Pcmanfm state=floating
+bspc rule -a Nsxiv state=floating
 bspc rule -a Screenkey manage=off
 
 $HOME/.config/bspwm/autostart
