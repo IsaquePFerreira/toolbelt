@@ -42,7 +42,7 @@ function get_desktop {
 
     case $desktop in
         1) sudo xbps-install -y $testing xfce4;;
-        2) sudo xbps-install -y $testing bspwm;;
+        2) sudo xbps-install -y $testing bspwm sxhkd;;
     esac
 
     if [[ $? == 0 ]]; then
@@ -84,9 +84,7 @@ function full_install {
     config_system
 
     echo -e 'Setup complete...\n'
-    read -p 'Press Enter to reboot...' continues
-
-    sudo reboot
+    read -p 'Press Enter to continue...' continues
 }
 
 function setup_help {
