@@ -2,56 +2,111 @@
 
 # testing='--dry-run'
 
-clear
+version="${0##*/} version 0.2"
 
-echo -e 'Update system...\n'
-sudo xbps-install -Suy
+function update_system {
+    sudo xbps-install -Suy
+    echo -e 'Update system...\n'
 
-if [[ $? == 0 ]]; then
-    echo -e '\nComplete system update!\n'
-else
-    echo -e '\nError! Exiting...\n'
-    exit 1
-fi
+    if [[ $? == 0 ]]; then
+        echo -e '\nComplete system update!\n'
+    else
+        echo -e '\nError! Exiting...\n'
+        exit 1
+    fi
+}
 
-packages=$(sed -e '/^\s*#/g' -e '/^\s*$/g' packages.txt | tr '\n' ' ')
+function install_packages {
+    update_system
+    packages=$(sed -e '/^\s*#/g' -e '/^\s*$/g' packages.txt | tr '\n' ' ')
 
-echo -e 'Install some packages...\n'
-sudo xbps-install -Sy $testing ${packages[@]}
+    echo -e 'Install some packages...\n'
+    sudo xbps-install -y $testing ${packages[@]}
 
-if [[ $? == 0 ]]; then
-    echo -e '\nComplete package install!\n'
-else
-    echo -e '\nError! Exiting...\n'
-    exit 1
-fi
+    if [[ $? == 0 ]]; then
+        echo -e '\nComplete package install!\n'
+    else
+        echo -e '\nError! Exiting...\n'
+        exit 1
+    fi
+}
 
-clear
+function get_desktop {
+    desktops='
+    1 - xfce4
+    2 - bspwm
+    '
+    echo "$desktops"
 
-echo 'Configure system...'
+    read -p 'Choose a DE or WM: ' desktop
 
-echo -e '\nCopy settings to .config...\n'
-mkdir -p $HOME/.config
-cp -r config/* $HOME/.config/
+    case $desktop in
+        1) sudo xbps-install -y $testing xfce4;;
+        2) sudo xbps-install -y $testing bspwm;;
+    esac
 
-echo -e 'Copy hidden files of home...\n'
-for f in home/*; do
-    cp -r $f "$HOME/.${f##*/}"
-done
+    if [[ $? == 0 ]]; then
+        echo -e '\nComplete desktop install!\n'
+    else
+        echo -e '\nError! Exiting...\n'
+        exit 1
+    fi
+}
 
-echo -e 'Source bash_xw...\n'
-echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> ~/.bashrc
+function config_system {
+    echo 'Configure system...'
 
-echo -e 'Copy bin folder...\n'
-cp -r bin ~/.local/bin
+    echo -e '\nCopy settings to .config...\n'
+    mkdir -p $HOME/.config
+    cp -r config/* $HOME/.config/
 
-echo -e 'Create user folders...\n'
-xdg-user-dirs-update
+    echo -e 'Copy hidden files of home...\n'
+    for f in home/*; do
+        cp -r $f "$HOME/.${f##*/}"
+    done
 
-echo -e 'Startx setup...\n'
-echo 'exec dbus-launch --exit-with-session bspwm' >> ~/.xinitrc
+    echo -e 'Source bash_xw...\n'
+    echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> ~/.bashrc
 
-echo -e 'Setup complete...\n'
-read -p 'Press Enter to reboot...' continues
+    echo -e 'Copy bin folder...\n'
+    cp -r bin ~/.local/bin
 
-sudo reboot
+    echo -e 'Create user folders...\n'
+    xdg-user-dirs-update
+
+    echo -e 'Startx setup...\n'
+    echo 'exec dbus-launch --exit-with-session bspwm' >> ~/.xinitrc
+}
+
+function full_install {
+    install_packages
+    get_desktop
+    config_system
+
+    echo -e 'Setup complete...\n'
+    read -p 'Press Enter to reboot...' continues
+
+    sudo reboot
+}
+
+function setup_help {
+    cat <<EOF
+    usage: ${0##*/} [flags]
+
+    Options:
+
+    --install          Only install list of packages
+    --full-install     Install packages, desktop and config system
+    --version,-v       Show version
+    --help,-h          Show this is message
+
+EOF
+}
+
+case $@ in
+    --install) install_packages && get_desktop;;
+    --full-install) full_install;;
+    --version|-v) printf "%s\n" "$version" ;;
+    --help) setup_help;;
+    *) echo 'Invalid option! type --help for valid options...' && exit 1;;
+esac
