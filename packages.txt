@@ -1,81 +1,61 @@
-# Intel
-# intel-ucode
-# Xorg
-# xorg-minimal
-# xf86-input-synaptics
-# xf86-video-intel
-#
-# dbus
-# dbus-x11
-# polkit
-# polkit-elogind
-# elogind
-# Bspwm setup
-# bspwm
-# sxhkd
-# rofi
-# sakura
-# neovim
-# polybar
-# betterlockscreen
-# nitrogen
-# XDG
-# xdg-desktop-portal
-# xdg-desktop-portal-gtk
-# xdg-user-dirs
-# xdg-user-dirs-gtk
-# xdg-utils
-# Fonts
-# noto-fonts-ttf
-# noto-fonts-ttf-extra
-# font-awesome6
-# terminus-font
-# Appearance
+intel-ucode
+xorg
+xf86-input-synaptics
+xf86-video-intel
+dbus
+dbus-x11
+polkit
+polkit-elogind
+elogind
+sakura
+neovim
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-user-dirs
+xdg-user-dirs-gtk
+xdg-utils
+noto-fonts-ttf
+noto-fonts-ttf-extra
+font-awesome6
+terminus-font
 # picom
-# yaru-plus
-# papirus-icon-theme
-# papirus-folders
-# Apps
-# firefox
-# keepassxc
-# pcmanfm
-# gvfs
-# gvfs-mtp
-# file-roller
-# atril
+yaru-plus
+papirus-icon-theme
+papirus-folders
+firefox
+keepassxc
+gvfs
+gvfs-mtp
+file-roller
+atril
 # mpv
-# gimp
-# CLI
-# curl
-# wget
-# lynx
-# w3m
-# w3m-img
-# ranger
-# htop
-# neofetch
-# bash-completion
-# p7zip
-# unzip
-# zip
-# unrar
-# nsxiv
-# mupdf
-# ncdu
-# fzf
-# bat
-# eza
-# ufw
-# ripgrep
-# dust
-# Audio
+gimp
+curl
+wget
+lynx
+w3m
+w3m-img
+ranger
+htop
+neofetch
+bash-completion
+p7zip
+unzip
+zip
+unrar
+nsxiv
+mupdf
+ncdu
+fzf
+bat
+eza
+ufw
+ripgrep
+dust
 # pulseaudio
 # pavucontrol
-# pamixer
-# Notification
+pamixer
 # dunst
-# Polkit
 # xfce-polkit
-# Dev
-# git
-# base-devel
+git
+base-devel
