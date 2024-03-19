@@ -22,8 +22,11 @@ terminus-font
 yaru-plus
 papirus-icon-theme
 papirus-folders
+qt5ct
+qt5-styleplugins
 firefox
 keepassxc
+# thunar-archive-plugin
 gvfs
 gvfs-mtp
 file-roller
@@ -52,8 +55,8 @@ eza
 ufw
 ripgrep
 dust
-# pulseaudio
-# pavucontrol
+pulseaudio
+pavucontrol
 pamixer
 # dunst
 # xfce-polkit
