@@ -69,7 +69,8 @@ function config_system {
     echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> ~/.bashrc
 
     echo -e 'Copy bin folder...\n'
-    cp -r bin ~/.local/bin
+    mkdir ~/.local/bin
+    cp -r bin/* ~/.local/bin/
 
     echo -e 'Create user folders...\n'
     xdg-user-dirs-update
