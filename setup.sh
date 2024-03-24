@@ -88,6 +88,18 @@ function full_install {
     read -p 'Press Enter to continue...' continues
 }
 
+function post_install_todo {
+    cat <<EOF
+    POST INSTALLATION TODO
+    ---------------------
+    -[]get node
+    -[]get nerd fonts
+    -[]install mscorefonts
+    -[]vim setup
+
+EOF
+}
+
 function setup_help {
     cat <<EOF
     usage: ${0##*/} [flags]
@@ -96,6 +108,7 @@ function setup_help {
 
     --install          Only install list of packages
     --full-install     Install packages, desktop and config system
+    --post-todo        Check Post Installation ToDo
     --version,-v       Show version
     --help,-h          Show this is message
 
@@ -105,7 +118,8 @@ EOF
 case $@ in
     --install) install_packages && get_desktop;;
     --full-install) full_install;;
-    --version|-v) printf "%s\n" "$version" ;;
+    --post-todo) post_install_todo;;
+    --version|-v) printf "%s\n" "$version";;
     --help) setup_help;;
     *) setup_help && exit 1;;
 esac
