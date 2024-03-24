@@ -107,5 +107,5 @@ case $@ in
     --full-install) full_install;;
     --version|-v) printf "%s\n" "$version" ;;
     --help) setup_help;;
-    *) echo 'Invalid option! type --help for valid options...' && exit 1;;
+    *) setup_help && exit 1;;
 esac
