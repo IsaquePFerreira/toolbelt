@@ -79,15 +79,6 @@ function config_system {
     echo 'exec dbus-launch --exit-with-session bspwm' >> ~/.xinitrc
 }
 
-function full_install {
-    install_packages
-    get_desktop
-    config_system
-
-    echo -e 'Setup complete...\n'
-    read -p 'Press Enter to continue...' continues
-}
-
 function post_install_todo {
     cat <<EOF
     POST INSTALLATION TODO
@@ -98,6 +89,17 @@ function post_install_todo {
     -[]vim setup
 
 EOF
+}
+
+function full_install {
+    install_packages
+    get_desktop
+    config_system
+
+    echo -e 'Setup complete...\n'
+    read -p 'Press Enter to continue...' continues
+    clear
+    post_install_todo
 }
 
 function setup_help {
