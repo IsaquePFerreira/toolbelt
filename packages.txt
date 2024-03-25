@@ -62,3 +62,4 @@ pamixer
 # xfce-polkit
 git
 base-devel
+lua
