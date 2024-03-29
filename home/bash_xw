@@ -5,6 +5,8 @@ fi
 export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
 
 export TERM="xterm-256color"
+export TERMCMD="sakura"
+export SHELL="/bin/bash"
 export EDITOR="nvim"
 export PAGER="less"
 
