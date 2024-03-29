@@ -83,9 +83,12 @@ function post_install_todo {
     cat <<EOF
     POST INSTALLATION TODO
     ---------------------
+    -[]set keyboard layout in gui
+    -[]enable touchpad tap
+    -[]grub timeout
     -[]get node
     -[]get nerd fonts
-    -[]install mscorefonts
+    -[]install msttcorefonts
     -[]vim setup
 
 EOF
