@@ -83,6 +83,7 @@ function post_install_todo {
     cat <<EOF
     POST INSTALLATION TODO
     ---------------------
+    -[]enable necessary services
     -[]set keyboard layout in gui
     -[]enable touchpad tap
     -[]grub timeout
