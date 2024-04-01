@@ -5,8 +5,8 @@
 version="${0##*/} version 0.2"
 
 function update_system {
-    sudo xbps-install -Suy
     echo -e 'Update system...\n'
+    sudo xbps-install -Suy
 
     if [[ $? == 0 ]]; then
         echo -e '\nComplete system update!\n'
