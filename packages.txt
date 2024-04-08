@@ -18,7 +18,7 @@ noto-fonts-ttf
 noto-fonts-ttf-extra
 font-awesome6
 terminus-font
-# picom
+picom
 yaru-plus
 papirus-icon-theme
 papirus-folders
@@ -26,12 +26,12 @@ qt5ct
 qt5-styleplugins
 firefox
 keepassxc
-# thunar-archive-plugin
+thunar-archive-plugin
 gvfs
 gvfs-mtp
 file-roller
 atril
-# mpv
+mpv
 gimp
 curl
 wget
@@ -58,8 +58,8 @@ dust
 pulseaudio
 pavucontrol
 pamixer
-# dunst
-# xfce-polkit
+dunst
+xfce-polkit
 git
 base-devel
 lua
