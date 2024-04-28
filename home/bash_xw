@@ -1,5 +1,5 @@
-if [[ -d "$HOME/.local/bin" ]]; then
-    PATH="$HOME/.local/bin:$PATH"
+if [[ -d "$HOME/.bin" ]]; then
+    PATH="$HOME/.bin:$PATH"
 fi
 
 export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
@@ -15,7 +15,7 @@ alias l="ls --color=auto"
 alias la="ls -a --color=auto"
 alias ll="ls -l --color=auto"
 alias lal="ls -al --color=auto"
-alias l.="ls -A | egrep '^\.'"
+alias l.="ls -A | egrep '^\.' | pr -T --column=2"
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -25,6 +25,7 @@ alias wget="wget -c"
 alias ips='ip -c -br a'
 
 alias vi="nvim"
+alias virc="vi ~/.config/nvim/lua/base.lua"
 
 bind "set completion-ignore-case on"
 
