@@ -1,6 +1,6 @@
 # Program launchers
 super + Return
-	sakura
+    sakura
 
 super + d
     rofi -show drun
@@ -9,22 +9,22 @@ super + w
     firefox
 
 super + e
-    pcmanfm
+    thunar
 
 # Lock screen
-super + ctrl + l
-    betterlockscreen -l
+# super + ctrl + l
+#    betterlockscreen -l
 
 # Powermenu
 super + shift + e
-    logout
+    $HOME/.bin/logout-menu
 
 # Volume
 alt + Up
-    vol+
+    $HOME/.bin/vol+
 
 alt+ Down
-    vol-
+    $HOME/.bin/vol-
 
 # Toggle bar
 super + b
