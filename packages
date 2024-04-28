@@ -1,32 +1,24 @@
-intel-ucode
+packages=(
 xorg
-xf86-input-synaptics
-xf86-video-intel
 dbus
-dbus-x11
 polkit
-polkit-elogind
 elogind
 sakura
 neovim
-xdg-desktop-portal
-xdg-desktop-portal-gtk
 xdg-user-dirs
-xdg-user-dirs-gtk
 xdg-utils
-noto-fonts-ttf
-noto-fonts-ttf-extra
-font-awesome6
 terminus-font
+fonts-roboto-ttf
+font-awesome6
 picom
-yaru-plus
+plata-theme
 papirus-icon-theme
 papirus-folders
-qt5ct
-qt5-styleplugins
 firefox
 keepassxc
+Thunar
 thunar-archive-plugin
+thunar-volman
 gvfs
 gvfs-mtp
 file-roller
@@ -35,7 +27,6 @@ mpv
 gimp
 curl
 wget
-lynx
 w3m
 w3m-img
 ranger
@@ -50,16 +41,19 @@ nsxiv
 mupdf
 ncdu
 fzf
-bat
-eza
+# bat
+# eza
+# ripgrep
+# dust
 ufw
-ripgrep
-dust
-pulseaudio
+# pulseaudio
 pavucontrol
-pamixer
+# pamixer
 dunst
 xfce-polkit
 git
 base-devel
 lua
+)
+
+# vim: ft=sh
