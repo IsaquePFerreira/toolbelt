@@ -7,8 +7,7 @@ function run {
   fi
 }
 
-# nitrogen --restore
-$HOME/.fehbg
+nitrogen --restore
 run dunst
 run picom
 run /usr/libexec/xfce-polkit
@@ -17,4 +16,5 @@ xset s off
 xset -dpms
 xbacklight -set 85
 xsetroot -cursor_name left_ptr
-run setxkbmap -layout br
+
+[[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
