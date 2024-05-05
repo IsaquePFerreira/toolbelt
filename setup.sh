@@ -126,5 +126,5 @@ echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> .bash_profile
 # Finish and reboot
 echo -e 'Setup complete...\n'
 read -p 'Press Enter to continue...' continues
-reboot
+sudo reboot
 
