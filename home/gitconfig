@@ -3,5 +3,3 @@
     name = IsaquePFerreira
 [init]
 	defaultBranch = main
-[core]
-	excludesFile = ~/.gitignore
