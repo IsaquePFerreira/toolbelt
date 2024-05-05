@@ -2,12 +2,74 @@
 
 # testing='--dry-run'
 
-# version="${0##*/} version 0.2"
+packages=(
+xorg
+dbus
+polkit
+elogind
+bspwm
+sxhkd
+dmenu
+polybar
+xterm
+neovim
+xdg-user-dirs
+xdg-utils
+xdg-desktop-portal
+terminus-font
+font-hack-ttf
+fonts-roboto-ttf
+font-awesome6
+picom
+lxappearance
+plata-theme
+papirus-icon-theme
+papirus-folders
+firefox
+firefox-i18n-pt-BR
+thunderbird
+thunderbird-i18n-pt-BR
+keepassxc
+Thunar
+thunar-archive-plugin
+thunar-volman
+gvfs
+gvfs-mtp
+file-roller
+xreader
+flameshot
+nitrogen
+mpv
+gimp
+curl
+wget
+w3m
+w3m-img
+ranger
+htop
+neofetch
+bash-completion
+p7zip
+unzip
+zip
+unrar
+nsxiv
+mupdf
+ncdu
+fzf
+ufw
+pulseaudio
+pavucontrol
+pamixer
+dunst
+xfce-polkit
+git
+base-devel
+lua
+libreoffice
+libreoffice-i18n-pt-BR
+)
 
-# Import package list
-source ./packages
-
-# Run sync and upgrade
 echo -e 'Update system...\n'
 sudo xbps-install -Suy
 
@@ -28,6 +90,10 @@ else
     echo -e '\nError! Exiting...\n'
     exit 1
 fi
+
+# Config keyboard and touchpad
+sudo mkdir -p /etc/X11/xorg.conf.d
+sudo cp -r xorg.conf.d/* /etc/X11/xorg.conf.d
 
 # Create folders and copy settings
 echo 'Configure system...'
@@ -52,6 +118,10 @@ echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> $HOME/.bashrc
 # Create user folders
 echo -e 'Create user folders...\n'
 xdg-user-dirs-update
+
+# Create .xinitrc
+echo -e 'Create user folders...\n'
+echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> .bash_profile
 
 # Finish and reboot
 echo -e 'Setup complete...\n'
