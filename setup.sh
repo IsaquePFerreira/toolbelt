@@ -9,6 +9,7 @@ polkit
 elogind
 bspwm
 sxhkd
+rofi
 dmenu
 polybar
 xterm
