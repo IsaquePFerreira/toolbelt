@@ -1,6 +1,6 @@
 # Program launchers
 super + Return
-    sakura
+    xterm
 
 super + d
     rofi -show drun
