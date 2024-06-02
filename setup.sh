@@ -7,12 +7,13 @@ xorg
 dbus
 polkit
 elogind
+xfce4
 bspwm
 sxhkd
 rofi
 dmenu
 polybar
-xterm
+xfce4-terminal
 neovim
 xdg-user-dirs
 xdg-utils
@@ -20,7 +21,7 @@ xdg-desktop-portal
 terminus-font
 font-hack-ttf
 fonts-roboto-ttf
-font-awesome6
+# font-awesome6
 picom
 lxappearance
 plata-theme
@@ -37,7 +38,7 @@ thunar-volman
 gvfs
 gvfs-mtp
 file-roller
-xreader
+atril
 flameshot
 nitrogen
 mpv
@@ -59,6 +60,7 @@ mupdf
 ncdu
 fzf
 ufw
+gufw
 pulseaudio
 pavucontrol
 pamixer
@@ -94,7 +96,7 @@ fi
 
 # Config keyboard and touchpad
 sudo mkdir -p /etc/X11/xorg.conf.d
-sudo cp -r xorg.conf.d/* /etc/X11/xorg.conf.d
+sudo cp -r xorg.conf.d/* /etc/X11/xorg.conf.d/
 
 # Create folders and copy settings
 echo 'Configure system...'
@@ -109,8 +111,8 @@ for f in home/*; do
 done
 
 echo -e 'Copy bin folder...\n'
-mkdir -p $HOME/.bin
-cp -r bin/* $HOME/.bin/
+mkdir -p $HOME/bin
+cp -r bin/* $HOME/bin/
 
 # Add custom prompt, shopts, alias, etc...
 echo -e 'Source bash_xw...\n'
