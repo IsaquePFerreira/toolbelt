@@ -1,6 +1,6 @@
 # Program launchers
 super + Return
-    xterm
+    xfce4-terminal
 
 super + d
     rofi -show drun
@@ -12,19 +12,19 @@ super + e
     thunar
 
 # Lock screen
-# super + ctrl + l
-#    betterlockscreen -l
+super + ctrl + l
+	$HOME/.bin/lockxw
 
 # Powermenu
 super + shift + e
-    $HOME/.bin/logout-menu
+    $HOME/bin/logout-menu
 
 # Volume
 alt + Up
-    $HOME/.bin/vol+
+    $HOME/bin/vol+
 
 alt+ Down
-    $HOME/.bin/vol-
+    $HOME/bin/vol-
 
 # Toggle bar
 super + b
@@ -53,7 +53,7 @@ super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous window in the current desktop
@@ -69,10 +69,10 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
+super + alt + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
