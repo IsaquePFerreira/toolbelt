@@ -1,6 +1,6 @@
 #!/bin/bash
 
-opt1="Logout\nReiniciar\nDesligar"
+opt1="Bloquear\nLogout\nReiniciar\nDesligar"
 opt2="Sim\nNão"
 
 function ask {
@@ -10,6 +10,13 @@ function ask {
 ask "$opt1" "Encerrar sessão"
 
 case $answer in
+    "Bloquear")
+        ask "$opt2" "Deseja bloquear a tela?"
+        if [[ $answer == "Sim" ]]; then
+            $HOME/.bin/lockxw
+        fi
+        exit 0
+        ;;
     "Logout")
         ask "$opt2" "Quer mesmo sair do bspwm?"
         if [[ $answer == "Sim" ]]; then
