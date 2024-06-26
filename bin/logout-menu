@@ -1,23 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-opt1="Bloquear\nLogout\nReiniciar\nDesligar"
+# dmenu theming
+lines="-l 3"
+font="-fn RobotoMono-15"
+# colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
+
+first_prompt="O que você quer?"
+opt1="Sair do bspwm\nReiniciar\nDesligar"
 opt2="Sim\nNão"
 
-function ask {
-    answer="$(echo -e $1 | rofi -dmenu -i -p "$2")"
+
+ask() {
+    answer="$( echo -e $1 | dmenu -i -p "$2" $lines $colors $font )"
 }
 
-ask "$opt1" "Encerrar sessão"
+ask "$opt1" "$first_prompt"
 
 case $answer in
-    "Bloquear")
-        ask "$opt2" "Deseja bloquear a tela?"
-        if [[ $answer == "Sim" ]]; then
-            $HOME/.bin/lockxw
-        fi
-        exit 0
-        ;;
-    "Logout")
+    "Sair do bspwm")
         ask "$opt2" "Quer mesmo sair do bspwm?"
         if [[ $answer == "Sim" ]]; then
             bspc quit
@@ -39,3 +39,6 @@ case $answer in
         exit 0
         ;;
 esac
+
+exit 0
+
