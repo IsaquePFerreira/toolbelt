@@ -20,6 +20,10 @@ sxhkd
 dmenu
 # polybar
 xfce4-terminal
+xfce4-panel
+xfce4-whiskermenu-plugin
+octoxbps
+xfce4-pulseaudio-plugin
 neovim
 xdg-user-dirs
 xdg-utils
