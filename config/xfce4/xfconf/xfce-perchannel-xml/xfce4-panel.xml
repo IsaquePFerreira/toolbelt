@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=8;x=683;y=752"/>
+      <property name="length" type="double" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="icon-size" type="uint" value="16"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="4"/>
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="5"/>
+        <value type="int" value="15"/>
+        <value type="int" value="6"/>
+        <value type="int" value="10"/>
+        <value type="int" value="7"/>
+        <value type="int" value="13"/>
+        <value type="int" value="12"/>
+      </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="enter-opacity" type="uint" value="80"/>
+      <property name="leave-opacity" type="uint" value="80"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-3" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="miniature-view" type="bool" value="false"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
+      <property name="numbering" type="bool" value="false"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (85%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (81%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (82%)"/>
+        <value type="string" value="uget-gtk"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (79%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (77%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (83%)"/>
+        <value type="string" value="parole"/>
+        <value type="string" value="octoxbps-notifier"/>
+        <value type="string" value="xfce terminal"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (74%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (84%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (78%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (89%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (86%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (87%)"/>
+        <value type="string" value="wi-fi network connection “cicero ferreira” active: cicero ferreira (88%)"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="qBittorrent"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="chrome_status_icon_1"/>
+        <value type="string" value="octoxbps-notifier"/>
+      </property>
+      <property name="single-row" type="bool" value="true"/>
+      <property name="hidden-items" type="array">
+      </property>
+      <property name="hidden-legacy-items" type="array">
+      </property>
+      <property name="hide-new-items" type="bool" value="false"/>
+      <property name="icon-size" type="int" value="0"/>
+      <property name="menu-is-primary" type="bool" value="false"/>
+    </property>
+    <property name="plugin-10" type="string" value="notification-plugin"/>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="digital-layout" type="uint" value="1"/>
+      <property name="digital-time-font" type="string" value="Roboto Mono Medium 10"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="show-seconds" type="bool" value="false"/>
+      <property name="flash-separators" type="bool" value="false"/>
+      <property name="show-meridiem" type="bool" value="false"/>
+      <property name="digital-date-font" type="string" value="Roboto Mono Medium 10"/>
+      <property name="digital-date-format" type="string" value="%d/%m/%Y"/>
+    </property>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-7" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="known-players" type="string" value="Chrome;firefox;Firefox Web Browser"/>
+      <property name="enable-wnck" type="bool" value="false"/>
+      <property name="enable-multimedia-keys" type="bool" value="false"/>
+      <property name="enable-mpris" type="bool" value="false"/>
+    </property>
+    <property name="plugin-1" type="string" value="whiskermenu">
+      <property name="recent" type="array">
+        <value type="string" value="nitrogen.desktop"/>
+        <value type="string" value="virt-manager.desktop"/>
+        <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
+        <value type="string" value="thunar.desktop"/>
+        <value type="string" value="syncthing-ui.desktop"/>
+        <value type="string" value="syncthing-start.desktop"/>
+        <value type="string" value="libreoffice-calc.desktop"/>
+        <value type="string" value="xfce-ui-settings.desktop"/>
+        <value type="string" value="steam.desktop"/>
+        <value type="string" value="Stardew Valley.desktop"/>
+      </property>
+      <property name="position-categories-alternate" type="bool" value="true"/>
+      <property name="position-search-alternate" type="bool" value="true"/>
+      <property name="position-profile-alternate" type="bool" value="false"/>
+      <property name="show-command-logout" type="bool" value="false"/>
+      <property name="show-command-logoutuser" type="bool" value="true"/>
+      <property name="show-command-restart" type="bool" value="true"/>
+      <property name="show-command-shutdown" type="bool" value="true"/>
+      <property name="show-command-lockscreen" type="bool" value="false"/>
+      <property name="menu-width" type="int" value="650"/>
+      <property name="menu-height" type="int" value="500"/>
+      <property name="stay-on-focus-out" type="bool" value="false"/>
+      <property name="show-button-icon" type="bool" value="true"/>
+      <property name="show-button-title" type="bool" value="false"/>
+      <property name="menu-opacity" type="int" value="85"/>
+      <property name="view-mode" type="int" value="1"/>
+      <property name="category-show-name" type="bool" value="true"/>
+      <property name="launcher-show-name" type="bool" value="true"/>
+      <property name="launcher-icon-size" type="int" value="1"/>
+      <property name="category-icon-size" type="int" value="1"/>
+      <property name="favorites" type="array">
+        <value type="string" value="firefox.desktop"/>
+        <value type="string" value="libreoffice-writer.desktop"/>
+        <value type="string" value="steam.desktop"/>
+        <value type="string" value="htop.desktop"/>
+        <value type="string" value="xfce4-terminal.desktop"/>
+        <value type="string" value="thunderbird.desktop"/>
+        <value type="string" value="syncthing-start.desktop"/>
+        <value type="string" value="org.xfce.mousepad.desktop"/>
+        <value type="string" value="thunar.desktop"/>
+        <value type="string" value="mate-calc.desktop"/>
+        <value type="string" value="libreoffice-calc.desktop"/>
+      </property>
+      <property name="position-commands-alternate" type="bool" value="true"/>
+      <property name="command-logoutuser" type="string" value="bspc quit"/>
+      <property name="command-restart" type="string" value="loginctl reboot"/>
+      <property name="command-shutdown" type="string" value="loginctl poweroff"/>
+    </property>
+    <property name="plugin-2" type="string" value="tasklist">
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="sort-order" type="uint" value="1"/>
+      <property name="show-labels" type="bool" value="true"/>
+      <property name="include-all-workspaces" type="bool" value="true"/>
+      <property name="include-all-monitors" type="bool" value="true"/>
+    </property>
+    <property name="plugin-8" type="string" value="cpugraph">
+      <property name="update-interval" type="int" value="2"/>
+      <property name="time-scale" type="int" value="0"/>
+      <property name="size" type="int" value="40"/>
+      <property name="mode" type="int" value="1"/>
+      <property name="color-mode" type="int" value="2"/>
+      <property name="frame" type="int" value="0"/>
+      <property name="border" type="int" value="1"/>
+      <property name="bars" type="int" value="1"/>
+      <property name="per-core" type="int" value="0"/>
+      <property name="tracked-core" type="int" value="0"/>
+      <property name="in-terminal" type="int" value="1"/>
+      <property name="startup-notification" type="int" value="0"/>
+      <property name="load-threshold" type="int" value="0"/>
+      <property name="smt-stats" type="int" value="0"/>
+      <property name="smt-issues" type="int" value="0"/>
+      <property name="per-core-spacing" type="int" value="1"/>
+      <property name="command" type="string" value=""/>
+      <property name="background" type="array">
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+        <value type="double" value="0"/>
+      </property>
+      <property name="foreground-1" type="array">
+        <value type="double" value="0"/>
+        <value type="double" value="1"/>
+        <value type="double" value="0"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="foreground-2" type="array">
+        <value type="double" value="1"/>
+        <value type="double" value="0"/>
+        <value type="double" value="0"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="foreground-3" type="array">
+        <value type="double" value="0"/>
+        <value type="double" value="0"/>
+        <value type="double" value="1"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="smt-issues-color" type="array">
+        <value type="double" value="0.90000000000000002"/>
+        <value type="double" value="0"/>
+        <value type="double" value="0"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="foreground-system" type="array">
+        <value type="double" value="0.90000000000000002"/>
+        <value type="double" value="0.10000000000000001"/>
+        <value type="double" value="0.10000000000000001"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="foreground-user" type="array">
+        <value type="double" value="0.10000000000000001"/>
+        <value type="double" value="0.40000000000000002"/>
+        <value type="double" value="0.90000000000000002"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="foreground-nice" type="array">
+        <value type="double" value="0.90000000000000002"/>
+        <value type="double" value="0.80000000000000004"/>
+        <value type="double" value="0.20000000000000001"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="foreground-iowait" type="array">
+        <value type="double" value="0.20000000000000001"/>
+        <value type="double" value="0.90000000000000002"/>
+        <value type="double" value="0.40000000000000002"/>
+        <value type="double" value="1"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="diskperf"/>
+    <property name="plugin-15" type="string" value="netload"/>
+    <property name="plugin-5" type="string" value="systemload">
+      <property name="cpu" type="empty">
+        <property name="enabled" type="bool" value="false"/>
+      </property>
+      <property name="network" type="empty">
+        <property name="enabled" type="bool" value="false"/>
+      </property>
+      <property name="memory" type="empty">
+        <property name="label" type="string" value="mem"/>
+      </property>
+    </property>
+  </property>
+</channel>
