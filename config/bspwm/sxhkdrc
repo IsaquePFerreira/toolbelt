@@ -3,7 +3,7 @@ super + Return
     xfce4-terminal
 
 super + d
-    rofi -show drun
+    dmenu_run
 
 super + w
     firefox
@@ -17,14 +17,14 @@ super + ctrl + l
 
 # Powermenu
 super + shift + e
-    $HOME/bin/logout-menu
+    $HOME/.bin/logout-menu
 
 # Volume
 alt + Up
-    $HOME/bin/vol+
+    $HOME/.bin/vol+
 
 alt+ Down
-    $HOME/bin/vol-
+    $HOME/.bin/vol-
 
 # Toggle bar
 super + b
@@ -63,6 +63,7 @@ super + Tab
 # focus the next/previous window in the current desktop
 super + j
   	bspc node -f next.local.!hidden.window
+
 
 # focus the next/previous desktop in the current monitor
 super + ctrl + {Left,Right}

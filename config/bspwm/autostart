@@ -11,10 +11,12 @@ nitrogen --restore
 run dunst
 run picom
 run /usr/libexec/xfce-polkit
-run $HOME/.config/polybar/launch.sh
+# run $HOME/.config/polybar/launch.sh --forest
+run octoxbps-notifier
+run xfce4-panel
 xset s off
 xset -dpms
 xbacklight -set 85
 xsetroot -cursor_name left_ptr
 
-[[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
+# [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
