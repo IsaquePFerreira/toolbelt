@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Uncomment this line to testing mode in package manager
-testing='--dry-run'
+# testing='--dry-run'
 
 # Package list
 packages=(
