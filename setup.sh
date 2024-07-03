@@ -1,18 +1,20 @@
 #!/bin/bash
 
-# testing='--dry-run'
+# Uncomment this line to testing mode in package manager
+testing='--dry-run'
 
+# Package list
 packages=(
 xorg
 dbus
 polkit
 elogind
-xfce4
-bspwm
+# xfce4
+# bspwm
 sxhkd
-rofi
+# rofi
 dmenu
-polybar
+# polybar
 xfce4-terminal
 neovim
 xdg-user-dirs
@@ -27,6 +29,7 @@ lxappearance
 plata-theme
 papirus-icon-theme
 papirus-folders
+breeze-cursors
 firefox
 firefox-i18n-pt-BR
 thunderbird
@@ -49,7 +52,7 @@ w3m
 w3m-img
 ranger
 htop
-neofetch
+ufetch
 bash-completion
 p7zip
 unzip
@@ -73,9 +76,11 @@ libreoffice
 libreoffice-i18n-pt-BR
 )
 
+# Update system
 echo -e 'Update system...\n'
 sudo xbps-install -Suy
 
+# If exit status equals success 0 OK! If not, exit with error status 1 
 if [[ $? == 0 ]]; then
     echo -e '\nComplete system update!\n'
 else
@@ -83,10 +88,11 @@ else
     exit 1
 fi
 
-# Install some packages
+# Installing some packages
 echo -e 'Install some packages...\n'
 sudo xbps-install -y $testing ${packages[@]}
 
+# If exit status equals success 0 OK! If not, exit with error status 1 
 if [[ $? == 0 ]]; then
     echo -e '\nComplete package install!\n'
 else
@@ -101,15 +107,18 @@ sudo cp -r xorg.conf.d/* /etc/X11/xorg.conf.d/
 # Create folders and copy settings
 echo 'Configure system...'
 
+# ~/.config folder
 echo -e '\nCopy settings to .config...\n'
 mkdir -p $HOME/.config
 cp -r config/* $HOME/.config/
 
+# Hidden files in HOME
 echo -e 'Copy hidden files of home...\n'
 for f in home/*; do
     cp -r $f "$HOME/.${f##*/}"
 done
 
+# Folder to personal scripts
 echo -e 'Copy bin folder...\n'
 mkdir -p $HOME/bin
 cp -r bin/* $HOME/bin/
@@ -124,7 +133,7 @@ xdg-user-dirs-update
 
 # Create .xinitrc
 echo -e 'Create user folders...\n'
-echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> .bash_profile
+echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> .xinitrc
 
 # Finish and reboot
 echo -e 'Setup complete...\n'
