@@ -13,23 +13,23 @@ super + e
 
 # Lock screen
 super + ctrl + l
-	$HOME/.bin/lockxw
+	lockxw
 
 # Powermenu
 super + shift + e
-    $HOME/.bin/logout-menu
+    logout-menu
 
 # Volume
 alt + Up
-    $HOME/.bin/vol+
+    vol+
 
 alt+ Down
-    $HOME/.bin/vol-
+    vol-
 
 # Toggle bar
-super + b
-	{polybar-msg cmd toggle; bspc config top_padding +0 ,\
-         polybar-msg cmd toggle; bspc config top_padding 30 }
+# super + b
+# 	{polybar-msg cmd toggle; bspc config top_padding +0 ,\
+#          polybar-msg cmd toggle; bspc config top_padding 30 }
 
 # SXHKD reload
 super + Escape
@@ -63,7 +63,6 @@ super + Tab
 # focus the next/previous window in the current desktop
 super + j
   	bspc node -f next.local.!hidden.window
-
 
 # focus the next/previous desktop in the current monitor
 super + ctrl + {Left,Right}

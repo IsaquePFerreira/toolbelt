@@ -6,6 +6,10 @@ testing='--dry-run'
 # Package list
 packages=(
 xorg
+libXft-devel
+libX11-devel
+libXinerama-devel
+libXrender-devel
 dbus
 polkit
 elogind

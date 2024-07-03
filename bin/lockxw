@@ -2,13 +2,9 @@
 
 BLANK='#00000000'
 CLEAR='#ffffff22'
-# DEFAULT='#ff00ffcc'
 DEFAULT='#2DE72B'
-# TEXT='#ee00eeee'
 TEXT='#FFFFFF'
-# WRONG='#880000bb'
 WRONG='#934D72'
-# VERIFYING='#bb00bbbb'
 VERIFYING='#2CE8A9'
 
 i3lock \
