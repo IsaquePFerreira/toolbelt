@@ -3,7 +3,7 @@ super + Return
     xfce4-terminal
 
 super + d
-    dmenu_run
+    xfce4-popup-whiskermenu
 
 super + w
     firefox
