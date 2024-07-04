@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Uncomment this line to testing mode in package manager
-testing='--dry-run'
+# testing='--dry-run'
 
 # Package list
 packages=(
@@ -160,5 +160,5 @@ fi
 # Finish and reboot
 echo -e 'Setup complete...\n'
 read -p 'Press Enter to continue...' continues
-# sudo reboot
+sudo reboot
 
