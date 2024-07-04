@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Uncomment this line to testing mode in package manager
-# testing='--dry-run'
+testing='--dry-run'
 
 # Package list
 packages=(
+linux-firmware
 xorg
 libXft-devel
 libX11-devel
@@ -108,13 +109,14 @@ else
     exit 1
 fi
 
+echo 'Configure system...'
+
 # Config keyboard and touchpad
+echo 'Keyboard and touchpad setup...'
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo cp -r xorg.conf.d/* /etc/X11/xorg.conf.d/
 
 # Create folders and copy settings
-echo 'Configure system...'
-
 # ~/.config folder
 echo -e '\nCopy settings to .config...\n'
 mkdir -p $HOME/.config
@@ -133,18 +135,30 @@ cp -r bin/* $HOME/bin/
 
 # Add custom prompt, shopts, alias, etc...
 echo -e 'Source bash_xw...\n'
-echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> $HOME/.bashrc
+if grep '~/.bash_xw' $HOME/.bashrc &> /dev/null; then
+	echo 'bash_xw is already set!'
+else
+	echo -e '\n[[ -f ~/.bash_xw ]] && source ~/.bash_xw' >> $HOME/.bashrc
+fi
+
+# Change papirus-icon color
+echo -e '\nSet papirus-icon color...'
+sudo papirus-folders -C indigo
 
 # Create user folders
-echo -e 'Create user folders...\n'
+echo -e '\nCreate user folders...\n'
 xdg-user-dirs-update
 
 # Create .xinitrc
-echo -e 'Create user folders...\n'
-echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> .xinitrc
+echo -e 'Create .xinitrc ...\n'
+if [[  -f $HOME/.xinitrc ]] 2> /dev/null; then
+	echo 'There is already a .xinitrc'
+else
+	echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> $HOME/.xinitrc
+fi
 
 # Finish and reboot
 echo -e 'Setup complete...\n'
 read -p 'Press Enter to continue...' continues
-sudo reboot
+# sudo reboot
 
