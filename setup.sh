@@ -159,6 +159,6 @@ fi
 
 # Finish and reboot
 echo 'Setup complete...'
-read 'Press Enter to continue...' continues
+read -p 'Press Enter to continue...' continues
 sudo reboot
 
