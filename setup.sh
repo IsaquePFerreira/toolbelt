@@ -15,7 +15,7 @@ dbus
 polkit
 elogind
 # xfce4
-# bspwm
+bspwm
 sxhkd
 # rofi
 dmenu
@@ -103,9 +103,9 @@ sudo xbps-install -y $testing ${packages[@]}
 
 # If exit status equals success 0 OK! If not, exit with error status 1 
 if [[ $? == 0 ]]; then
-    echo -e '\nComplete package install!\n'
+    echo -e 'Complete package install!\n'
 else
-    echo -e '\nError! Exiting...\n'
+    echo -e 'Error! Exiting...\n'
     exit 1
 fi
 
@@ -118,23 +118,23 @@ sudo cp -r xorg.conf.d/* /etc/X11/xorg.conf.d/
 
 # Create folders and copy settings
 # ~/.config folder
-echo -e '\nCopy settings to .config...\n'
+echo 'Copy settings to .config...'
 mkdir -p $HOME/.config
 cp -r config/* $HOME/.config/
 
 # Hidden files in HOME
-echo -e 'Copy hidden files of home...\n'
+echo 'Copy hidden files of home...'
 for f in home/*; do
     cp -r $f "$HOME/.${f##*/}"
 done
 
 # Folder to personal scripts
-echo -e 'Copy bin folder...\n'
+echo 'Copy bin folder...'
 mkdir -p $HOME/bin
 cp -r bin/* $HOME/bin/
 
 # Add custom prompt, shopts, alias, etc...
-echo -e 'Source bash_xw...\n'
+echo 'Source bash_xw...'
 if grep '~/.bash_xw' $HOME/.bashrc &> /dev/null; then
 	echo 'bash_xw is already set!'
 else
@@ -142,23 +142,23 @@ else
 fi
 
 # Change papirus-icon color
-echo -e '\nSet papirus-icon color...'
+echo 'Set papirus-icon color...'
 sudo papirus-folders -C indigo
 
 # Create user folders
-echo -e '\nCreate user folders...\n'
+echo 'Create user folders...'
 xdg-user-dirs-update
 
 # Create .xinitrc
-echo -e 'Create .xinitrc ...\n'
+echo 'Create .xinitrc ...\n'
 if [[  -f $HOME/.xinitrc ]] 2> /dev/null; then
 	echo 'There is already a .xinitrc'
 else
-	echo -e '\n\nexec dbus-launch --exit-with-session bspwm' >> $HOME/.xinitrc
+	echo 'nexec dbus-launch --exit-with-session bspwm' >> $HOME/.xinitrc
 fi
 
 # Finish and reboot
-echo -e 'Setup complete...\n'
-read -p 'Press Enter to continue...' continues
+echo 'Setup complete...'
+read 'Press Enter to continue...' continues
 sudo reboot
 
