@@ -87,7 +87,7 @@ libreoffice-i18n-pt-BR
 
 # Update system
 echo -e 'Update system...\n'
-sudo xbps-install -Suy
+sudo xbps-install -Suy $testing
 
 # If exit status equals success 0 OK! If not, exit with error status 1 
 if [[ $? == 0 ]]; then
@@ -154,7 +154,7 @@ echo 'Create .xinitrc ...\n'
 if [[  -f $HOME/.xinitrc ]] 2> /dev/null; then
 	echo 'There is already a .xinitrc'
 else
-	echo 'nexec dbus-launch --exit-with-session bspwm' >> $HOME/.xinitrc
+	echo 'exec dbus-launch --exit-with-session bspwm' >> $HOME/.xinitrc
 fi
 
 # Finish and reboot
