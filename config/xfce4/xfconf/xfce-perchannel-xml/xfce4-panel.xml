@@ -21,6 +21,7 @@
         <value type="int" value="5"/>
         <value type="int" value="15"/>
         <value type="int" value="6"/>
+        <value type="int" value="1"/>
         <value type="int" value="10"/>
         <value type="int" value="7"/>
         <value type="int" value="13"/>
@@ -240,11 +241,18 @@
         <value type="string" value="libreoffice-impress.desktop"/>
         <value type="string" value="thunar.desktop"/>
         <value type="string" value="virt-manager.desktop"/>
+        <value type="string" value="xfce4-terminal.desktop"/>
       </property>
       <property name="recent" type="array">
         <value type="string" value="xfce-wm-settings.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-1" type="string" value="xfce4-clipman-plugin"/>
+    <property name="clipman" type="empty">
+      <property name="tweaks" type="empty">
+        <property name="never-confirm-history-clear" type="bool" value="false"/>
       </property>
     </property>
   </property>
