@@ -56,7 +56,7 @@ config_sys() {
 	xdg-user-dirs-update
 
 	# Create .xinitrc
-	echo 'Create .xinitrc ...\n'
+	echo 'Create .xinitrc ...'
 	if [[  -f $HOME/.xinitrc ]] 2> /dev/null; then
 		echo 'There is already a .xinitrc'
 	else

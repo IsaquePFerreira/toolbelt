@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=logout-menu
+Comment=Log out menu with dmen
+Exec=/home/ipf/bin/logout-menu
+Icon=system-devices-panel-alert
+Path=
+Terminal=false
+StartupNotify=false
