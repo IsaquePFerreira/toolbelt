@@ -91,6 +91,8 @@ xfce-polkit
 git
 base-devel
 lua
+geany
+geany-plugins
 libreoffice
 libreoffice-i18n-pt-BR
 )
