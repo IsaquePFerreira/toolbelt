@@ -3,7 +3,7 @@ super + Return
     xfce4-terminal
 
 super + d
-    xfce4-popup-whiskermenu
+    ~/bin/main-menu
 
 super + w
     firefox
@@ -13,18 +13,18 @@ super + e
 
 # Lock screen
 super + ctrl + l
-	lockxw
+	~/bin/lockxw
 
 # Powermenu
 super + shift + e
-    logout-menu
+    ~/bin/logout-menu
 
 # Volume
 alt + Up
-    vol+
+    ~/bin/vol+
 
 alt+ Down
-    vol-
+    ~/bin/vol-
 
 # Toggle bar
 # super + b

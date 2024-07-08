@@ -21,6 +21,7 @@ bspc rule -a Mousepad state=floating
 bspc rule -a Pcmanfm state=floating
 bspc rule -a Nsxiv state=floating
 bspc rule -a Wrapper-2.0 state=floating border=off focus=on
+bspc rule -a Xfce4-appfinder state=floating border=off focus=on
 bspc rule -a Screenkey manage=off
 
 $HOME/.config/bspwm/autostart
