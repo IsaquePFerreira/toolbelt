@@ -89,6 +89,10 @@ post_installation() {
 	echo 'Configure system...'
 	config_sys
 
+	# Set default wallpaper
+	echo 'Set wallpaper...'
+	feh --bg-scale wall015.jpg
+
 	# Finish and reboot
 	echo 'Setup complete...'
 	read -p 'Reboot system?[S/n]' continues
