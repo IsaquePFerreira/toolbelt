@@ -6,12 +6,23 @@
 # Package list
 packages=(
 linux-firmware
-xorg
-libXft-devel
-libX11-devel
-libXinerama-devel
-libXrender-devel
+xorg-minimal
+xf86-video-intel
+xf86-input-joystick
+xf86-input-synaptics
+xf86-input-libinput
+xauth
+xrandr
+setxkbmap
+xbacklight
+xprop
+xrdb
+# libXft-devel
+# libX11-devel
+# libXinerama-devel
+# libXrender-devel
 dbus
+dbus-elogind-x11
 polkit
 elogind
 # xfce4
@@ -23,18 +34,20 @@ dmenu
 xfce4-terminal
 xfce4-panel
 xfce4-whiskermenu-plugin
-octoxbps
 xfce4-pulseaudio-plugin
+octoxbps
+flatpak
+topgrade
 neovim
 xdg-user-dirs
 xdg-utils
 xdg-desktop-portal
 terminus-font
-font-hack-ttf
+# font-hack-ttf
 fonts-roboto-ttf
 # font-awesome6
 picom
-lxappearance
+# lxappearance
 plata-theme
 papirus-icon-theme
 papirus-folders
@@ -84,6 +97,8 @@ lua
 libreoffice
 libreoffice-i18n-pt-BR
 )
+
+set -e
 
 # Update system
 echo -e 'Update system...\n'
