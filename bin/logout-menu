@@ -3,7 +3,7 @@
 # dmenu theming
 lines="-l 3"
 font="-fn RobotoMono-15"
-# colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
+colors="-nb #2d2f31 -nf #ffffff -sb #2de72b -sf #2d2f31"
 
 first_prompt="O que você quer?"
 opt1="Sair do bspwm\nReiniciar\nDesligar"
