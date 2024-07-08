@@ -42,6 +42,7 @@ neovim
 xdg-user-dirs
 xdg-utils
 xdg-desktop-portal
+fontmanager
 terminus-font
 # font-hack-ttf
 fonts-roboto-ttf
@@ -56,12 +57,14 @@ firefox
 firefox-i18n-pt-BR
 thunderbird
 thunderbird-i18n-pt-BR
+transmission-gtk
 keepassxc
 Thunar
 thunar-archive-plugin
 thunar-volman
 gvfs
 gvfs-mtp
+scrcpy
 file-roller
 atril
 flameshot
