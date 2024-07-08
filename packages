@@ -11,6 +11,7 @@ setxkbmap
 xbacklight
 xprop
 xrdb
+xclipboard
 # libXft-devel
 # libX11-devel
 # libXinerama-devel
@@ -22,6 +23,8 @@ elogind
 # xfce4
 bspwm
 sxhkd
+lightdm
+lightdm-gtk3-greeter
 # rofi
 dmenu
 # polybar

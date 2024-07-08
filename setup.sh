@@ -60,7 +60,7 @@ config_sys() {
 	if [[  -f $HOME/.xinitrc ]] 2> /dev/null; then
 		echo 'There is already a .xinitrc'
 	else
-		echo 'exec dbus-launch --exit-with-session bspwm' >> $HOME/.xinitrc
+		echo 'exec bspwm' >> $HOME/.xinitrc
 	fi
 }
 
