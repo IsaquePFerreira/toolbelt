@@ -25,6 +25,7 @@ bspwm
 sxhkd
 lightdm
 lightdm-gtk3-greeter
+i3lock-color
 # rofi
 dmenu
 # polybar
