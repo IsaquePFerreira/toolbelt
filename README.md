@@ -1,4 +1,4 @@
-![xwdots complete setup](xwdots-comple-setup.png)
+![xwdots complete setup]("xwdots-comple-setup.png")
 
 # xwdots
 
