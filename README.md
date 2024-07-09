@@ -1,6 +1,7 @@
+# xwdots
 ![xwdots complete setup](xwdots-complete-setup.png)
 
-# xwdots
+## xwdots
 
 My dotfiles and scripts for personal use -- use at your own risk.
 
@@ -8,7 +9,7 @@ My dotfiles and scripts for personal use -- use at your own risk.
 
 This repository contains my configuration files
 
-and scripts, which make it easier to set up 
+and scripts, which make it easier to set up
 
 my workstation(themes, icons, CLI tools, apps and more).
 
