@@ -17,6 +17,7 @@ install_pkgs() {
 }
 
 config_sys() {
+	echo 'Configure system...'
 	# Config keyboard and touchpad
 	echo 'Keyboard and touchpad setup...'
 	sudo mkdir -p /etc/X11/xorg.conf.d
@@ -62,6 +63,10 @@ config_sys() {
 	else
 		echo 'exec bspwm' >> $HOME/.xinitrc
 	fi
+
+	# Set default wallpaper
+	echo 'Set wallpaper...'
+	feh --bg-scale wall015.jpg
 }
 
 post_installation() {
@@ -86,12 +91,7 @@ post_installation() {
 	fi
 
 	# Configure system
-	echo 'Configure system...'
 	config_sys
-
-	# Set default wallpaper
-	echo 'Set wallpaper...'
-	feh --bg-scale wall015.jpg
 
 	# Finish and reboot
 	echo 'Setup complete...'
