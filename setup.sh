@@ -65,8 +65,8 @@ config_sys() {
 	fi
 
 	# Set default wallpaper
-	echo 'Set wallpaper...'
-	feh --bg-scale wall015.jpg
+	# echo 'Set wallpaper...'
+	# feh --bg-scale wall015.jpg
 }
 
 post_installation() {
