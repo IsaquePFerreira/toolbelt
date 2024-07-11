@@ -20,17 +20,17 @@ dbus
 dbus-elogind-x11
 polkit
 elogind
-# xfce4
-bspwm
-sxhkd
+xfce4
+# bspwm
+# sxhkd
 lightdm
 lightdm-gtk3-greeter
-i3lock-color
+# i3lock-color
 # rofi
 dmenu
 # polybar
-xfce4-terminal
-xfce4-panel
+# xfce4-terminal
+# xfce4-panel
 xfce4-whiskermenu-plugin
 xfce4-pulseaudio-plugin
 xfce4-clipman-plugin
@@ -47,11 +47,12 @@ xdg-utils
 xdg-desktop-portal
 fontmanager
 terminus-font
+dejavu-fonts-ttf
 # font-hack-ttf
-fonts-roboto-ttf
+# fonts-roboto-ttf
 # font-awesome6
-picom
-lxappearance
+# picom
+# lxappearance
 plata-theme
 papirus-icon-theme
 papirus-folders
@@ -70,10 +71,10 @@ gvfs-mtp
 scrcpy
 file-roller
 atril
-mate-calc
-flameshot
-nitrogen
-mpv
+# mate-calc
+# flameshot
+# nitrogen
+# mpv
 gimp
 curl
 wget
@@ -97,15 +98,16 @@ gufw
 pulseaudio
 pavucontrol
 pamixer
-dunst
+# dunst
 xfce-polkit
 git
 base-devel
 lua
-geany
-geany-plugins
+# geany
+# geany-plugins
 libreoffice
 libreoffice-i18n-pt-BR
+docker
 qemu
 virt-manager
 )
