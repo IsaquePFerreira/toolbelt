@@ -1,9 +1,14 @@
+# -------------
 # Program launchers
+# -------------
 super + Return
-    xfce4-terminal
+    alacritty
 
 super + d
-    ~/bin/main-menu
+	xfce4-popup-whiskermenu
+
+super + @space
+    $HOME/bin/main-menu
 
 super + w
     firefox
@@ -13,32 +18,32 @@ super + e
 
 # Lock screen
 super + ctrl + l
-	~/bin/lockxw
+	$HOME/bin/xwlock
 
-# Powermenu
+# Log out menu
 super + shift + e
-    ~/bin/logout-menu
+    $HOME/bin/logout-menu
 
 # Volume
-alt + Up
-    ~/bin/vol+
+alt + equal
+    $HOME/bin/vol+
 
-alt+ Down
-    ~/bin/vol-
+alt + minus
+    $HOME/bin/vol-
 
-# Toggle bar
-# super + b
-# 	{polybar-msg cmd toggle; bspc config top_padding +0 ,\
-#          polybar-msg cmd toggle; bspc config top_padding 30 }
-
+# -------------
 # SXHKD reload
+# -------------
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# -------------
 # BSPWM hotkeys
+# -------------
+
 # quit/restart bspwm
-super + shift + r
-	bspc wm -r
+super + shift + {q,r}
+	bspc {quit,wm -r}
 
 # close and kill
 super + shift + c
@@ -46,23 +51,15 @@ super + shift + c
 
 # alternate between the tiled and monocle layout
 super + m
- 	bspc desktop -l next
+	bspc desktop -l next
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {F9,F10,F11}
+	bspc node -t {floating,tiled,fullscreen}
 
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
-
-# cycle occupied workspaces
-super + Tab
-	bspc desktop -f {prev,next}.occupied.local
-
-# focus the next/previous window in the current desktop
-super + j
-  	bspc node -f next.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + ctrl + {Left,Right}
@@ -79,4 +76,3 @@ super + alt + {Left,Down,Up,Right}
 # contract a window by moving one of its side inward
 super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-

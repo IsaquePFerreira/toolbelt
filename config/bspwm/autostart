@@ -7,18 +7,15 @@ function run {
   fi
 }
 
-# xrandr -s 1366x768
-# nitrogen --restore
-$HOME/.fehbg
+nitrogen --restore
 run dunst
 run picom
 run /usr/libexec/xfce-polkit
-# run $HOME/.config/polybar/launch.sh --forest
 run octoxbps-notifier
+run nm-applet
 run xfce4-panel
-xset s off
-xset -dpms
+# xset s off
+# xset -dpms
 xbacklight -set 85
 xsetroot -cursor_name left_ptr
 
-# [[ -f $HOME/.Xresources ]] && xrdb -merge $HOME/.Xresources
