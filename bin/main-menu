@@ -1,8 +1,0 @@
-#!/bin/bash
-
-lines="-l 4"
-font="-fn RobotoMono-15"
-colors="-nb #2d2f31 -nf #ffffff -sb #2de72b -sf #2d2f31"
-prompt="-p Apps: "
-
-dmenu_run $prompt $lines $colors $font 
