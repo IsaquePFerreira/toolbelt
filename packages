@@ -2,42 +2,24 @@ packages=(
 linux-firmware
 xorg-minimal
 xf86-video-intel
-xf86-input-joystick
-xf86-input-synaptics
-xf86-input-libinput
-xauth
 xrandr
 setxkbmap
 xbacklight
 xprop
-xrdb
 xclipboard
-# libXft-devel
-# libX11-devel
-# libXinerama-devel
-# libXrender-devel
 dbus
 dbus-elogind-x11
 polkit
 elogind
-xfce4
-# bspwm
-# sxhkd
+bspwm
+sxhkd
 lightdm
 lightdm-gtk3-greeter
-# i3lock-color
-# rofi
+i3lock-color
 dmenu
-# polybar
-# xfce4-terminal
-# xfce4-panel
+xfce4-panel
 xfce4-whiskermenu-plugin
 xfce4-pulseaudio-plugin
-xfce4-clipman-plugin
-xfce4-cpugraph-plugin
-xfce4-diskperf-plugin
-xfce4-systemload-plugin
-xfce4-netload-plugin
 octoxbps
 flatpak
 topgrade
@@ -45,17 +27,11 @@ neovim
 xdg-user-dirs
 xdg-utils
 xdg-desktop-portal
-fontmanager
 terminus-font
-dejavu-fonts-ttf
-# font-hack-ttf
-# fonts-roboto-ttf
-# font-awesome6
-# picom
-# lxappearance
-plata-theme
-papirus-icon-theme
-papirus-folders
+google-fonts-ttf
+picom
+lxappearance
+yaru-plus
 breeze-cursors
 firefox
 firefox-i18n-pt-BR
@@ -71,40 +47,29 @@ gvfs-mtp
 scrcpy
 file-roller
 atril
-# mate-calc
-# flameshot
-# nitrogen
-# mpv
+mate-calc
+flameshot
+nitrogen
+mpv
 gimp
 curl
 wget
-w3m
-w3m-img
-ranger
 htop
 ufetch
 bash-completion
-p7zip
-unzip
-zip
-unrar
-nsxiv
-feh
+sxiv
 mupdf
 ncdu
 fzf
 ufw
-gufw
 pulseaudio
 pavucontrol
 pamixer
-# dunst
+dunst
 xfce-polkit
 git
 base-devel
 lua
-# geany
-# geany-plugins
 libreoffice
 libreoffice-i18n-pt-BR
 docker
