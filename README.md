@@ -1,31 +1,32 @@
 # xwdots
-![xwdots complete setup](xwdots-complete-setup.png)
 
-## xwdots
+Meu dotfiles e scripts que uso no meu dia a dia -- Use por sua conta em risco.
 
-My dotfiles and scripts for personal use -- use at your own risk.
+## Introdução
 
-## Introduction
+Este script foi desenvolvido para automatizar parte da minha pós-instalação.
 
-This repository contains my configuration files
+O objetivo é não perder tempo na hora de configurar o meu ambiente de trabalho
 
-and scripts, which make it easier to set up
+### Algumas recomendações
 
-my workstation(themes, icons, CLI tools, apps and more).
+Eu utilizo uma distro chamada Void Linux, então pode ser que se tentar executar
 
-### Before starting
+isso em outra distro as coisas podem não muito certo :)
 
-I use Void Linux, like this:
-- Install the non-free repository
-- xbps to install packages
+Se preciso faça modificações no script.
 
-NOTE: The settings and scripts are intended for my personal use,
+Além de que certifique-se de habilitar o repositório non-free
 
-so use at your own risk. Before using the files,
+antes de executar o script.
 
-test in the VM, make the necessary changes, test again, then use on your machine.
+OBS: Lembrando mais uma vez, essas configurações e scripts são para o meu uso.
 
-### Installation
+Use por sua conta em risco. Antes de iniciar os procedimentos realize testes 
+
+numa VM, faça as mudanças necessárias, teste de novo.
+
+### Instalação
 
 ```sh
     git clone https://github.com/IsaquePFerreira/xwdots
@@ -35,5 +36,5 @@ test in the VM, make the necessary changes, test again, then use on your machine
 
 ---
 
-Made with ❤ and Bash
+Feito com ❤ e Bash
 
