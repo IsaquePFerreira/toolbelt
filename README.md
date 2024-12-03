@@ -12,7 +12,7 @@ O objetivo é não perder tempo na hora de configurar o meu ambiente de trabalho
 
 Eu utilizo uma distro chamada Void Linux, então pode ser que se tentar executar
 
-isso em outra distro as coisas podem não muito certo :)
+isso em outra distro as coisas podem não funcionar muito bem. :)
 
 Se preciso faça modificações no script.
 
@@ -31,7 +31,7 @@ numa VM, faça as mudanças necessárias, teste de novo.
 ```sh
     git clone https://github.com/IsaquePFerreira/xwdots
     cd xwdots
-    ./setup.sh
+    ./setup.sh -pi
 ```
 
 ---
