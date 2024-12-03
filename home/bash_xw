@@ -5,7 +5,7 @@ fi
 export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
 
 export TERM="xterm-256color"
-export TERMCMD="xfce4-terminal"
+export TERMCMD="sakura"
 export SHELL="/bin/bash"
 export EDITOR="nvim"
 export PAGER="less"
@@ -15,7 +15,6 @@ alias l="ls --color=auto"
 alias la="ls -a --color=auto"
 alias ll="ls -l --color=auto"
 alias lal="ls -al --color=auto"
-alias l.="ls -A | egrep '^\.' | pr -T --column=2"
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -24,12 +23,9 @@ alias fgrep="fgrep --color=auto"
 alias wget="wget -c"
 alias ips='ip -c -br a'
 
-alias iv="nvim"
-
 bind "set completion-ignore-case on"
 
 shopt -s autocd
-shopt -s cdspell 
 shopt -s expand_aliases
 
 # vim: ft=sh
