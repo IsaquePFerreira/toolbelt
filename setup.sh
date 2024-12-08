@@ -18,12 +18,6 @@ set_home_hidden_files() {
     for f in home/*; do
         cp -ruv $f "$HOME/.${f##*/}"
     done
-}
-
-set_bin_folder() {
-    echo 'Copy bin folder...'
-    mkdir -p $HOME/bin
-    cp -ruv bin/* $HOME/bin/
 
     echo 'Source bash_xw...'
     if grep '~/.bash_xw' $HOME/.bashrc &> /dev/null; then
@@ -33,13 +27,18 @@ set_bin_folder() {
     fi
 }
 
+set_bin_folder() {
+    echo 'Copy bin folder...'
+    mkdir -p $HOME/bin
+    cp -ruv bin/* $HOME/bin/
+}
+
 config_sys() {
     echo 'Configure system...'
     set_keys
     set_configs
     set_home_hidden_files
     set_bin_folder
-    set_bash_aliases
 }
 
 _help() {
@@ -54,7 +53,6 @@ usage: ${0##*/} [flags]
     --configs,-c	        Set ~/.config
     --home,-ho 	            Set home hidden files
     --src,-s                Set scripts folder
-    --bash-aliases,-bs      Source ~/.bash_aliases
     --help,-h          	    Show this is message
 
 EOF
