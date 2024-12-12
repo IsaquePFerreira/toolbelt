@@ -12,6 +12,7 @@ dbus-elogind-x11
 polkit
 elogind
 bspwm
+i3
 sxhkd
 slock
 rofi
