@@ -1,0 +1,16 @@
+bash-completion
+flatpak
+fzf
+htop
+lynx
+moc
+mupdf
+ncdu
+neofetch
+poppler-utils
+rar
+sxiv
+ufw
+unrar
+w3m
+yt-dlp

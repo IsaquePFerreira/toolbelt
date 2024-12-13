@@ -1,0 +1,11 @@
+xorg
+dbus
+slock
+rofi
+bspwm
+sxhkd
+dunst
+xdg-user-dirs
+xdg-utils
+xdg-desktop-portal
+picom

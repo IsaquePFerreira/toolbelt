@@ -1,0 +1,3 @@
+docker
+qemu
+virt-manager

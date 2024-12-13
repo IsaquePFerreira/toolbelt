@@ -1,0 +1,7 @@
+breeze-cursor-theme
+elementary-icon-theme
+fonts-cantarell
+fonts-font-awesome
+fonts-hack-ttf
+fonts-terminus
+greybird-gtk-theme

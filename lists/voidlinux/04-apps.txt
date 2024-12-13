@@ -1,0 +1,17 @@
+firefox
+firefox-i18n-pt-BR
+thunderbird
+thunderbird-i18n-pt-BR
+nemo
+nemo-file-roller
+gvfs
+gvfs-mtp
+file-roller
+atril
+gnome-calculator
+flameshot
+nitrogen
+mpv
+gimp
+libreoffice
+libreoffice-i18n-pt-BR

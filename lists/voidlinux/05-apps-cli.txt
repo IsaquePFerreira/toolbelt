@@ -1,0 +1,10 @@
+neovim
+htop
+ufetch
+bash-completion
+sxiv
+mupdf
+ncdu
+fzf
+ufw
+flatpak
