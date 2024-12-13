@@ -2,8 +2,11 @@
 
 set_keys() {
     echo 'Keyboard setup...'
-    sudo mkdir -p /etc/X11/xorg.conf.d
-    sudo cp -ruv xorg.conf.d/* /etc/X11/xorg.conf.d/
+    if grep 'setxkbmap -layout br-abnt2' $HOME/.xinitrc &> /dev/null; then
+        echo 'keyboad layout is already set!'
+    else
+        echo 'setxkbmap -layout br-abnt2' > $HOME/.xinitrc
+    fi
 }
 
 set_configs() {
