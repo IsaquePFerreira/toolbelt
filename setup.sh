@@ -51,12 +51,12 @@ usage: ${0##*/} [flags]
 
   Options:
 
-    --all,-a       	        Complete config system
-    --keys,-k       	    Set keyboard settings
-    --configs,-c	        Set ~/.config
-    --home,-ho 	            Set home hidden files
-    --src,-s                Set scripts folder
-    --help,-h          	    Show this is message
+    --all       	        Complete config system
+    --keyboard       	    Set keyboard settings
+    --config	            Set ~/.config
+    --home 	                Set home hidden files
+    --bin                   Set scripts folder
+    --help          	    Show this is message
 
 EOF
 }
@@ -64,11 +64,11 @@ EOF
 set -e
 
 case $@ in
-	--all|-a) config_sys;;
-	--keys|-k) set_keys;;
-	--configs|-c) set_configs;;
-	--home|-ho) set_home_hidden_files;;
-	--src|-s) set_bin_folder;;
-	--help|-h) _help;;
+	--all) config_sys;;
+	--keys) set_keys;;
+	--config) set_configs;;
+	--home) set_home_hidden_files;;
+	--bin) set_bin_folder;;
+	--help) _help;;
 	*) echo 'Invalid parameter!' && _help;;
 esac
