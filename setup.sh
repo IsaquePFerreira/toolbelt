@@ -10,10 +10,9 @@ set_keys() {
 }
 
 set_configs() {
-    echo 'Create ~/.config folder and copy settings'
-	echo 'Copy settings to .config...'
+    echo 'Loading user configs...'
 	mkdir -p $HOME/.config
-	cp -ruv config/* $HOME/.config/
+    ln -s desktops/$desktop/config/* $HOME/.config/
 }
 
 set_home_hidden_files() {
@@ -65,7 +64,7 @@ set -e
 
 case $@ in
 	--all) config_sys;;
-	--keys) set_keys;;
+	--keyboard) set_keys;;
 	--config) set_configs;;
 	--home) set_home_hidden_files;;
 	--bin) set_bin_folder;;
