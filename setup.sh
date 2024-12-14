@@ -1,5 +1,7 @@
 #!/bin/bash
 
+desktop=$1
+
 set_keys() {
     echo 'Keyboard setup...'
     if grep 'setxkbmap -layout br-abnt2' $HOME/.xinitrc &> /dev/null; then
@@ -10,14 +12,14 @@ set_keys() {
 }
 
 set_configs() {
-    echo 'Loading user configs...'
-	mkdir -p $HOME/.config
-    ln -s desktops/$desktop/config/* $HOME/.config/
+    echo 'Copy configs...'
+    mkdir -pv $HOME/.config
+    cp -ruv desktops/$desktop/config/* $HOME/.config/
 }
 
 set_home_hidden_files() {
     echo 'Copy hidden files of home...'
-    for f in home/*; do
+    for f in desktops/$desktop/home/*; do
         cp -ruv $f "$HOME/.${f##*/}"
     done
 
@@ -46,16 +48,16 @@ config_sys() {
 _help() {
 cat << EOF
 
-usage: ${0##*/} [flags]
+usage: ${0##*/} [desktop] [flags]
 
   Options:
 
-    --all       	        Complete config system
-    --keyboard       	    Set keyboard settings
-    --config	            Set ~/.config
-    --home 	                Set home hidden files
-    --bin                   Set scripts folder
-    --help          	    Show this is message
+    --all            Complete config system
+    --keyboard       Set keyboard settings
+    --config	     Set ~/.config
+    --home           Set home hidden files
+    --bin            Set scripts folder
+    --help           Show this is message
 
 EOF
 }
