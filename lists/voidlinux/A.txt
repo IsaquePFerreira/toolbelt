@@ -1,6 +1,3 @@
-greybird-themes
-io.elementary.icons
-breeze-cursors
 terminus-font
 noto-fonts-ttf
 noto-fonts-ttf-extra
