@@ -3,7 +3,7 @@ firefox-i18n-pt-BR
 thunderbird
 thunderbird-i18n-pt-BR
 nemo
-nemo-file-roller
+nemo-fileroller
 gvfs
 gvfs-mtp
 file-roller
