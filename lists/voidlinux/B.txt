@@ -6,9 +6,7 @@ xbacklight
 xprop
 xclipboard
 dbus
-dbus-elogind-x11
 polkit
-elogind
 slock
 rofi
 bspwm
