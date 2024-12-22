@@ -1,4 +1,4 @@
-# xwdots
+# dotfiles
 
 Meu dotfiles e scripts que uso no meu dia a dia -- Use por sua conta em risco.
 
@@ -25,16 +25,4 @@ OBS: Lembrando mais uma vez, essas configurações e scripts são para o meu uso
 Use por sua conta em risco. Antes de iniciar os procedimentos realize testes 
 
 numa VM, faça as mudanças necessárias, teste de novo.
-
-### Instalação
-
-```sh
-    git clone https://github.com/IsaquePFerreira/xwdots
-    cd xwdots
-    ./setup.sh -pi
-```
-
----
-
-Feito com ❤ e Bash
 
