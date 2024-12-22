@@ -2,10 +2,10 @@
 # Program launchers
 # -------------
 super + Return
-    alacritty
+    gnome-terminal
 
 super + d
-	xfce4-popup-whiskermenu
+	rofi -show drun
 
 super + @space
     $HOME/bin/main-menu
@@ -14,7 +14,7 @@ super + w
     firefox
 
 super + e
-    thunar
+    nautilus
 
 # Lock screen
 super + ctrl + l
