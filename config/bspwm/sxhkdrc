@@ -5,7 +5,7 @@ super + Return
     gnome-terminal
 
 super + d
-	rofi -show drun
+	rofi -show 
 
 super + @space
     $HOME/bin/main-menu
