@@ -61,13 +61,13 @@ vim.opt.textwidth = 80
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.spell = false
-vim.opt.spelllang = { 'pt_br', 'en' }
+vim.opt.spelllang = { 'pt', 'en' }
 vim.opt.foldmethod = 'marker'
 vim.opt.list = false
 vim.opt.listchars = { tab = '›-', space = '·', trail = '⋯', eol = '↲' }
 vim.opt.fillchars = { vert = '│', fold = ' ' , eob = '~', lastline = '@' }
 
--- Spell {{{1
+-- Complete {{{1
 vim.cmd([[
 set complete+=kspell
 set completeopt=menuone,longest,noinsert
@@ -90,6 +90,8 @@ vim.cmd([[
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
+
+autocmd FileType md,markdown,txt,text, setlocal spell spelllang=pt,en
 ]])
 
 -- Keymaps {{{1
