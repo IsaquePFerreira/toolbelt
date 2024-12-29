@@ -1,9 +1,0 @@
-default-jdk
-git
-lua5.2
-meson
-ninja-build
-sassc
-vim
-yad
-zenity

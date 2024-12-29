@@ -1,4 +1,0 @@
-terminus-font
-noto-fonts-ttf
-noto-fonts-ttf-extra
-noto-fonts-cjk
