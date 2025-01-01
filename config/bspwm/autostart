@@ -7,8 +7,8 @@ run() {
 }
 
 nitrogen --restore
-run dunst
-run picom
+run dunst -config $HOME/.config/bspwm/dunst/dunstrc
+run picom --config $HOME/.config/bspwm/picom/picom.conf
 run $HOME/.config/bspwm/polybar/launch.sh
 # xset s off
 # xset -dpms
