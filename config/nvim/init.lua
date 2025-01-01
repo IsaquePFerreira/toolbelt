@@ -117,7 +117,7 @@ map('n', '<leader>c', ':bd<cr>')
 
 map('n', '<leader>t', ':tabnew<cr>')
 map('n', ']t', 'gt')
-map('n', '[t', ':bd<cr>')
+map('n', '[t', 'gT')
 vim.cmd([[nnoremap <leader>n :tabedit<space>]])
 
 map('n', '<esc>', '<cmd>nohlsearch<cr>')
@@ -200,4 +200,6 @@ vim.cmd([[
   autocmd BufLeave term://* stopinsert
 ]])
 --}}}
+-- FZF {{{1
+vim.cmd([[ source /usr/share/doc/fzf/examples/fzf.vim ]])
 
