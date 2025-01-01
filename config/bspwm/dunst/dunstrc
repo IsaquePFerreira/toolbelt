@@ -121,7 +121,7 @@
 
     ### Text ###
 
-    font = Roboto Mono Medium 9
+    font = Noto Sans Mono Medium 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
