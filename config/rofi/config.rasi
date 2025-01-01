@@ -1,7 +1,7 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-    show-icons:      false;
+    show-icons:      true;
     display-combi:    "";
     disable-history: false;
     modi: "combi";
