@@ -50,6 +50,7 @@ set_bin_folder() {
 
 config_sys() {
     echo 'Configure system...'
+    req_pkgs
     set_fonts
     set_wallpapers
     set_configs
