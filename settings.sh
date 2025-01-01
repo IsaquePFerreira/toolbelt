@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _DOT_DIR="$HOME/.dotfiles"
-source PACKAGES
+source $_DOT_DIR/PACKAGES
 
 req_pkgs() {
     sudo apt install -y ${PACKAGES[@]}
