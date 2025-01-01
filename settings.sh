@@ -1,15 +1,17 @@
 #!/bin/bash
 
 _DOT_DIR="$HOME/.dotfiles"
+source PACKAGES
 
 req_pkgs() {
-    sudo apt install -y $(cat $_DOT_DIR/PACKAGES.txt)
+    sudo apt install -y ${PACKAGES[@]}
 }
 
 set_fonts() {
     echo 'Copy fonts...'
     mkdir -pv $HOME/.local/fonts
     cp -ruv $_DOT_DIR/fonts/* $HOME/.local/fonts/
+    fc-cache -fv
 }
 
 set_wallpapers() {
