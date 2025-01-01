@@ -24,8 +24,6 @@ set_configs() {
     echo 'Set configs...'
     mkdir -pv $HOME/.config
     cp -ruv $_DOT_DIR/config/* $HOME/.config/
-    bspc wm -r
-    reset && clear && neofetch
 }
 
 set_home_hidden_files() {
@@ -56,6 +54,8 @@ config_sys() {
     set_configs
     set_home_hidden_files
     set_bin_folder
+    bspc wm -r
+    reset && clear && neofetch
 }
 
 _help() {
