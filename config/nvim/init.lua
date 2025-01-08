@@ -1,7 +1,7 @@
 -- General {{{1
 vim.g.mapleader = ','
 vim.opt.title = true
-vim.opt.mouse = ''
+vim.opt.mouse = 'a'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.wildmenu = true
 vim.opt.wildmode = { 'longest','full' }
@@ -19,6 +19,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = 'no'
 vim.opt.hidden = true
 vim.opt.confirm = true
+vim.opt.clipboard = 'unnamedplus'
 
 -- Colors {{{1
 vim.cmd([[
@@ -77,8 +78,8 @@ set shortmess+=c
 -- File browser {{{1
 vim.cmd([[
 let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=3
+let g:netrw_liststyle=0
+let g:netrw_browse_splitl=4
 let g:netrw_altv=1
 let g:netrw_winsize=25
 let g:netrw_keepdir=0
@@ -202,4 +203,4 @@ vim.cmd([[
 --}}}
 -- FZF {{{1
 vim.cmd([[ source /usr/share/doc/fzf/examples/fzf.vim ]])
-
+map('n', '<c-p>', ':FZF<cr>')
