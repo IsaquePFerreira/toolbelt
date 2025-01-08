@@ -1,6 +1,6 @@
-# if [[ -d "$HOME/.local/bin" ]]; then
-#     PATH="$HOME/.local/bin:$PATH"
-# fi
+if [[ -d "$HOME/.local/bin" ]]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
 
