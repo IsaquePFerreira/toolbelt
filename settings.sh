@@ -9,8 +9,8 @@ req_pkgs() {
 
 set_fonts() {
     echo 'Copy fonts...'
-    mkdir -pv $HOME/.local/fonts
-    cp -ruv $_DOT_DIR/fonts/* $HOME/.local/fonts/
+    mkdir -pv $HOME/.local/share/fonts
+    cp -ruv $_DOT_DIR/fonts/* $HOME/.local/share/fonts/
     fc-cache -fv
 }
 
