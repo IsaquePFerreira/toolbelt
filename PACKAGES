@@ -63,4 +63,6 @@ xdg-utils
 yad
 yt-dlp
 zenity
+tmux
+batcat
 )
