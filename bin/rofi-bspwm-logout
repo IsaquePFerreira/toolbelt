@@ -1,26 +1,20 @@
 #!/usr/bin/env bash
 
-# dmenu theming
-lines="-l 3"
-font="-fn Inconsolata-15"
-colors="-nb #2C323E -nf #9899a0 -sb #BF616A -sf #2C323E"
-
-first_prompt="O que você quer?"
-opt1="Sair do i3\nReiniciar\nDesligar"
+opt1="Logout\nReiniciar\nDesligar"
 opt2="Sim\nNão"
 
 
 ask() {
-    answer="$( echo -e $1 | dmenu -i -p "$2" $lines $colors $font )"
+    answer="$( echo -e $1 | rofi -dmenu -i -p "$2" )"
 }
 
-ask "$opt1" "$first_prompt"
+ask "$opt1" "Encerrar sessão"
 
 case $answer in
-    "Sair do i3")
-        ask "$opt2" "Quer mesmo sair do i3wm?"
+    "Logout")
+        ask "$opt2" "Quer mesmo sair do bspwm?"
         if [[ $answer == "Sim" ]]; then
-            i3-msg exit
+            bspc quit
         fi
         exit 0
         ;;

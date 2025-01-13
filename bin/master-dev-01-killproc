@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 selected="$(ps -a -u $USER | \
-            dmenu -i -l 20 -p "Select process to kill" | \
+            dmenu -fn 'Noto Sans Mono-13' -i -l 20 -p "Select process to kill" | \
             awk '{print $1" "$4}')"; 
             
 if [[ ! -z $selected ]]; then
