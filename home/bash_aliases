@@ -2,6 +2,10 @@ if [[ -d "$HOME/.local/bin" ]]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [[ -d "$HOME/.cargo/bin" ]]; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
 
 export TERM="xterm-256color"
