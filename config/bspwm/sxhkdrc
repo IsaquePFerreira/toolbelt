@@ -7,14 +7,17 @@ super + Return
 super + d
 	rofi -show 
 
-super + @space
-    $HOME/bin/main-menu
+super + f
+    $HOME/.local/bin/rofi-places
+
+super + s
+    $HOME/.local/bin/rofi-websearch
 
 super + w
     firefox
 
 super + e
-    nautilus
+    caja
 
 # Lock screen
 super + ctrl + l
@@ -22,7 +25,7 @@ super + ctrl + l
 
 # Log out menu
 super + shift + e
-    $HOME/bin/logout-menu
+    $HOME/.local/bin/rofi-bspwm-logout
 
 # Volume
 alt + equal
