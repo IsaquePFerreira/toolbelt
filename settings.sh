@@ -69,7 +69,7 @@ usage: ${0##*/} [flags]
     --all            Complete config system
     --install        Install required packages
     --keyboard       Set keyboard settings
-    --config	     Set ~/.config
+    --config         Set ~/.config
     --home           Set home hidden files
     --bin            Set scripts folder
     --help           Show this is message
@@ -80,12 +80,12 @@ EOF
 set -e
 
 case $@ in
-	--all) config_sys;;
+    --all) config_sys;;
     --install) req_pkgs;;
-	--keyboard) set_keys;;
-	--config) set_configs;;
-	--home) set_home_hidden_files;;
-	--bin) set_bin_folder;;
-	--help) _help;;
-	*) echo 'Invalid parameter!' && _help;;
+    --keyboard) set_keys;;
+    --config) set_configs;;
+    --home) set_home_hidden_files;;
+    --bin) set_bin_folder;;
+    --help) _help;;
+    *) echo 'Invalid parameter!' && _help;;
 esac
