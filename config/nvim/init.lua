@@ -145,15 +145,6 @@ set shortmess+=c
 ]])
 
 -- File browser {{{1
--- vim.cmd([[
--- let g:netrw_banner=0
--- let g:netrw_liststyle=0
--- let g:netrw_browse_splitl=4
--- let g:netrw_altv=1
--- let g:netrw_winsize=25
--- let g:netrw_keepdir=0
--- let g:netrw_localcopydircmd='cp -r'
--- ]])
 
 -- Neo tree
 require("neo-tree").setup({
@@ -261,22 +252,6 @@ fun! AutoComplete()
         call feedkeys("\<C-N>", 'n')
     end
 endfun
-
-" Create file without opening buffer
-function! CreateInPreview()
-  let l:filename = input('please enter filename: ')
-  execute 'silent !touch ' . b:netrw_curdir.'/'.l:filename
-  redraw!
-endfunction
-
-" Netrw: create file using touch instead of opening a buffer
-function! Netrw_mappings()
-  noremap <buffer>% :call CreateInPreview()<cr>
-endfunction
-
-augroup auto_commands
-	autocmd filetype netrw call Netrw_mappings()
-augroup END
 ]])
 
 -- Term {{{1
