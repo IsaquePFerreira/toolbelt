@@ -4,6 +4,7 @@ _DOT_DIR="$HOME/.dotfiles"
 source $_DOT_DIR/PACKAGES
 
 req_pkgs() {
+    echo 'Install some packages...'
     sudo apt install -y ${PACKAGES[@]}
 }
 

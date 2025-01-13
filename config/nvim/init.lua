@@ -200,7 +200,7 @@ vim.cmd([[
   autocmd TermOpen * startinsert
   autocmd BufLeave term://* stopinsert
 ]])
---}}}
+
 -- FZF {{{1
 vim.cmd([[ source /usr/share/doc/fzf/examples/fzf.vim ]])
 map('n', '<c-p>', ':FZF<cr>')
