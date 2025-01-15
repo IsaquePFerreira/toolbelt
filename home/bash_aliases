@@ -1,10 +1,4 @@
-if [[ -d "$HOME/.local/bin" ]]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [[ -d "$HOME/.cargo/bin" ]]; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
+[[ -d "$HOME/.local/bin" ]] && [[ -d "$HOME/.cargo/bin" ]] && PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
 
