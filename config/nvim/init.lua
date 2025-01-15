@@ -20,8 +20,8 @@ vim.opt.signcolumn = "no"
 vim.opt.hidden = true
 vim.opt.confirm = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+vim.opt.cursorline = false
+vim.opt.cursorcolumn = false
 
 -- Plugins {{{1
 local packer = require("packer")
@@ -31,6 +31,7 @@ vim.cmd([[packadd packer.nvim]])
 packer.startup(function()
 	use("wbthomason/packer.nvim")
 	use("neovim/nvim-lspconfig")
+    use("williamboman/mason.nvim")
 	use("nvim-treesitter/nvim-treesitter")
 	use("nvim-lua/plenary.nvim")
 	use("MunifTanjim/nui.nvim")
@@ -111,6 +112,7 @@ vim.opt.fillchars = { vert = "│", fold = " ", eob = "~", lastline = "@" }
 vim.opt.inccommand = "split"
 
 -- LSP {{{1
+require("mason").setup()
 local lspconfig = require("lspconfig")
 local caps = vim.lsp.protocol.make_client_capabilities()
 local no_format = function(client, bufnr)
@@ -118,6 +120,8 @@ local no_format = function(client, bufnr)
 end
 
 caps.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig').jdtls.setup({})
 
 lspconfig.ts_ls.setup({
 	capabilities = caps,
@@ -135,6 +139,13 @@ lspconfig.emmet_ls.setup({
 		"scss",
 		"typescriptreact",
 	},
+})
+
+-- Float Message
+vim.diagnostic.config({
+  float = { source = "always", border = border },
+  virtual_text = false,
+  signs = true,
 })
 
 -- Complete {{{1
@@ -169,6 +180,8 @@ autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
 
 autocmd FileType md,markdown,txt,text, setlocal spell spelllang=pt,en
+
+autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
 
 ]])
 
