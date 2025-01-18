@@ -2,7 +2,7 @@
 # Program launchers
 # -------------
 super + Return
-    gnome-terminal
+    mate-terminal
 
 super + d
 	rofi -show 
@@ -21,7 +21,7 @@ super + e
 
 # Lock screen
 super + ctrl + l
-	$HOME/bin/xwlock
+	slock
 
 # Log out menu
 super + shift + e
@@ -29,10 +29,13 @@ super + shift + e
 
 # Volume
 alt + equal
-    $HOME/bin/vol+
+    $HOME/.local/bin/vol+
 
 alt + minus
-    $HOME/bin/vol-
+    $HOME/.local/bin/vol-
+
+alt + 0
+    $HOME/.local/bin/vol-mute
 
 # -------------
 # SXHKD reload
