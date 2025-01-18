@@ -25,7 +25,7 @@ vim.opt.cursorcolumn = false
 
 -- Plugins {{{1
 vim.cmd([[
-let g:plugins = ["https://github.com/nvim-treesitter/nvim-treesitter", "https://github.com/norcalli/nvim-colorizer.lua", "https://github.com/nvim-lua/plenary.nvim", "https://github.com/MunifTanjim/nui.nvim", "https://github.com/nvim-neo-tree/neo-tree.nvim", "https://github.com/neoclide/coc.nvim"]
+let g:plugins = ["https://github.com/nvim-treesitter/nvim-treesitter", "https://github.com/norcalli/nvim-colorizer.lua", "https://github.com/nvim-lua/plenary.nvim", "https://github.com/MunifTanjim/nui.nvim", "https://github.com/nvim-neo-tree/neo-tree.nvim", "https://github.com/neoclide/coc.nvim", "https://github.com/dracula/vim"]
 ]])
 
 -- Colors {{{1
