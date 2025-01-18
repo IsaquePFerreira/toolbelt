@@ -24,20 +24,9 @@ vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
 
 -- Plugins {{{1
-local packer = require("packer")
-
-vim.cmd([[packadd packer.nvim]])
-
-packer.startup(function()
-	use("wbthomason/packer.nvim")
-	use("neovim/nvim-lspconfig")
-    use("williamboman/mason.nvim")
-	use("nvim-treesitter/nvim-treesitter")
-	use("nvim-lua/plenary.nvim")
-	use("MunifTanjim/nui.nvim")
-	use("norcalli/nvim-colorizer.lua")
-	use({ "nvim-neo-tree/neo-tree.nvim", branch = "v2.x" })
-end)
+vim.cmd([[
+let g:plugins = ["https://github.com/nvim-treesitter/nvim-treesitter", "https://github.com/norcalli/nvim-colorizer.lua", "https://github.com/nvim-lua/plenary.nvim", "https://github.com/MunifTanjim/nui.nvim", "https://github.com/nvim-neo-tree/neo-tree.nvim", "https://github.com/neoclide/coc.nvim"]
+]])
 
 -- Colors {{{1
 vim.opt.background = "dark"
@@ -52,29 +41,47 @@ filetype plugin indent on
 hi Normal guibg=NONE ctermbg=NONE
 ]])
 
+-- CoC
+vim.cmd([[
+let g:coc_global_extensions = [
+			\ 'coc-tsserver',
+			\ 'coc-clangd',
+			\ 'coc-html',
+			\ 'coc-css',
+			\ 'coc-yaml',
+			\ 'coc-toml',
+			\ 'coc-go',
+			\ 'coc-pyright',
+			\ 'coc-zig',
+			\ 'coc-emmet',
+			\ 'coc-lua',
+			\ 'coc-texlab',
+			\ 'coc-json',
+			\ 'coc-sh',
+			\ 'coc-eslint',
+			\ 'coc-markdownlint'
+			\  ]
+
+inoremap <silent><expr> <TAB>
+			\ coc#pum#visible() ? coc#pum#next(1) :
+			\ CheckBackspace() ? "\<Tab>" :
+			\ coc#refresh()
+
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+]])
+
 -- Colorizer
 require("colorizer").setup()
-
--- TreeSitter
-require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"lua",
-		"vim",
-		"javascript",
-	},
-	highlight = { enable = true },
-	indent = { enable = true },
-	autotag = {
-		enable = true,
-		filetypes = {
-			"html",
-			"javascript",
-			"typescript",
-			"vue",
-			"xml",
-		},
-	},
-})
 
 -- Backup files {{{1
 vim.opt.backup = false
@@ -111,43 +118,6 @@ vim.opt.listchars = { tab = "›-", space = "·", trail = "⋯", eol = "↲" }
 vim.opt.fillchars = { vert = "│", fold = " ", eob = "~", lastline = "@" }
 vim.opt.inccommand = "split"
 
--- LSP {{{1
-require("mason").setup()
-local lspconfig = require("lspconfig")
-local caps = vim.lsp.protocol.make_client_capabilities()
-local no_format = function(client, bufnr)
-	client.resolved_capabilities.document_formatting = false
-end
-
-caps.textDocument.completion.completionItem.snippetSupport = true
-
-require('lspconfig').jdtls.setup({})
-
-lspconfig.ts_ls.setup({
-	capabilities = caps,
-	on_attach = no_format,
-})
-
-lspconfig.emmet_ls.setup({
-	capabilities = snip_caps,
-	filetypes = {
-		"css",
-		"html",
-		"javascriptreact",
-		"less",
-		"sass",
-		"scss",
-		"typescriptreact",
-	},
-})
-
--- Float Message
-vim.diagnostic.config({
-  float = { source = "always", border = border },
-  virtual_text = false,
-  signs = true,
-})
-
 -- Complete {{{1
 vim.opt.completeopt = "menuone,longest,noinsert"
 vim.cmd([[
@@ -156,7 +126,6 @@ set shortmess+=c
 ]])
 
 -- File browser {{{1
-
 -- Neo tree
 require("neo-tree").setup({
 	close_if_last_window = false,
@@ -180,8 +149,6 @@ autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
 
 autocmd FileType md,markdown,txt,text, setlocal spell spelllang=pt,en
-
-autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
 
 ]])
 
@@ -240,33 +207,6 @@ map("v", "<leader>`", "c``<esc>P")
 map("v", "<leader><", "c<><esc>P")
 map("v", "<leader>*", "c**<esc>P")
 
--- Auto-Complete {{{1
-vim.cmd([[
-set omnifunc=syntaxcomplete#Complete
-
-inoremap <expr> <Tab> TabComplete()
-fun! TabComplete()
-    if getline('.')[col('.') - 2] =~ '\K' || pumvisible()
-        return "\<C-N>"
-    else
-        return "\<Tab>"
-    endif
-endfun
-
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
-autocmd InsertCharPre * call AutoComplete()
-fun! AutoComplete()
-    if v:char =~ '\K'
-                \ && getline('.')[col('.') - 4] !~ '\K'
-                \ && getline('.')[col('.') - 3] =~ '\K'
-                \ && getline('.')[col('.') - 2] =~ '\K' " last char
-                \ && getline('.')[col('.') - 1] !~ '\K'
-
-        call feedkeys("\<C-N>", 'n')
-    end
-endfun
-]])
-
 -- Term {{{1
 vim.cmd([[command! Term :botright split term://$SHELL]])
 vim.cmd([[
@@ -278,3 +218,4 @@ vim.cmd([[
 -- FZF {{{1
 vim.cmd([[ source /usr/share/doc/fzf/examples/fzf.vim ]])
 map("n", "<c-p>", ":FZF<cr>")
+-- }}}
