@@ -16,9 +16,13 @@ set_fonts() {
 }
 
 set_wallpapers() {
+    echo 'Download wallpapers...'
+    cd /tmp
+    [[ -d wallpapers ]] && rm -rf wallpapers
+    git clone https://github.com/IsaquePFerreira/wallpapers
     echo 'Copy wallpapers...'
     mkdir -pv $HOME/Pictures/wallpapers
-    cp -ruv $_DOT_DIR/wallpapers/* $HOME/Pictures/wallpapers/
+    cp -ruv wallpapers/* $HOME/Pictures/wallpapers/
 }
 
 set_configs() {
