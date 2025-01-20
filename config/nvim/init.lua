@@ -25,7 +25,7 @@ vim.opt.cursorcolumn = false
 
 -- Plugins {{{1
 vim.cmd([[
-let g:plugins = ["https://github.com/nvim-treesitter/nvim-treesitter", "https://github.com/norcalli/nvim-colorizer.lua", "https://github.com/nvim-lua/plenary.nvim", "https://github.com/MunifTanjim/nui.nvim", "https://github.com/nvim-neo-tree/neo-tree.nvim", "https://github.com/neoclide/coc.nvim", "https://github.com/dracula/vim"]
+let g:plugins = ["https://github.com/nvim-treesitter/nvim-treesitter", "https://github.com/norcalli/nvim-colorizer.lua", "https://github.com/nvim-lua/plenary.nvim", "https://github.com/MunifTanjim/nui.nvim", "https://github.com/nvim-neo-tree/neo-tree.nvim", "https://github.com/neoclide/coc.nvim", "https://github.com/dracula/vim", "https://github.com/posva/vim-vue"]
 ]])
 
 -- Colors {{{1
@@ -41,7 +41,10 @@ filetype plugin indent on
 hi Normal guibg=NONE ctermbg=NONE
 ]])
 
--- CoC
+-- Colorizer
+require("colorizer").setup()
+
+-- CoC{{{1
 vim.cmd([[
 let g:coc_global_extensions = [
 			\ 'coc-tsserver',
@@ -59,7 +62,9 @@ let g:coc_global_extensions = [
 			\ 'coc-json',
 			\ 'coc-sh',
 			\ 'coc-eslint',
-			\ 'coc-markdownlint'
+			\ 'coc-markdownlint',
+            \ '@yaegassy/coc-volar',
+            \ '@yaegassy/coc-volar-tools'
 			\  ]
 
 inoremap <silent><expr> <TAB>
@@ -79,9 +84,6 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 ]])
-
--- Colorizer
-require("colorizer").setup()
 
 -- Backup files {{{1
 vim.opt.backup = false
