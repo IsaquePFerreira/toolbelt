@@ -1,6 +1,7 @@
-[[ -d "$HOME/.local/bin" ]] && [[ -d "$HOME/.cargo/bin" ]] && PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+[[ -d "$HOME/.cargo/bin" ]] && PATH="$HOME/.cargo/bin:$PATH"
 
-export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
+# export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
+export PS1='\$ '
 
 export TERM="xterm-256color"
 # export TERMCMD="xterm"
