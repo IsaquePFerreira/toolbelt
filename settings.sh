@@ -84,12 +84,12 @@ EOF
 set -e
 
 case $@ in
-    --all) config_sys;;
-    --install) req_pkgs;;
+    --all)      config_sys;;
+    --install)  req_pkgs;;
     --keyboard) set_keys;;
-    --config) set_configs;;
-    --home) set_home_hidden_files;;
-    --bin) set_bin_folder;;
-    --help) _help;;
+    --config)   set_configs;;
+    --home)     set_home_hidden_files;;
+    --bin)      set_bin_folder;;
+    --help)     _help;;
     *) echo 'Invalid parameter!' && _help;;
 esac

@@ -64,7 +64,8 @@ let g:coc_global_extensions = [
 			\ 'coc-eslint',
 			\ 'coc-markdownlint',
             \ '@yaegassy/coc-volar',
-            \ '@yaegassy/coc-volar-tools'
+            \ '@yaegassy/coc-volar-tools',
+			\ 'coc-java'
 			\  ]
 
 inoremap <silent><expr> <TAB>

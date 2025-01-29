@@ -1,5 +1,7 @@
 {
-  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSave": false,
   "volar.enable": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "codeLens.enable": true,
+  "java.referencesCodeLens.enabled": true
 }
