@@ -10,11 +10,18 @@
 # ./settings.sh --all
 #
 
+############
+# VARIABLES
+############
 # Caminho para a pasta dotfiles no home do usuário
 _DOT_DIR="$HOME/.local/share/dotfiles"
 _CONFIG_DIR="$_DOT_DIR/config"
 _BIN_DIR="$_DOT_DIR/bin"
 _HIDDEN_FILES_DIR="$_DOT_DIR/home"
+
+# Urls
+FONTS_URL="https://github.com/IsaquePFerreira/fonts"
+WALLPAPERS_URL="https://github.com/IsaquePFerreira/wallpapers"
 
 # Carrega a lista de pacotes que vão ser instalados
 source "$_DOT_DIR/PACKAGES"
@@ -27,10 +34,13 @@ req_pkgs() {
 
 # Copie fontes para diretório no home do usuário e atualiza o cache de fontes
 set_fonts() {
+    echo 'Download fonts...'
+    cd /tmp
+    [[ -d fonts ]] && rm -rf fonts
+    git clone "$FONTS_URL"
     echo 'Copy fonts...'
     mkdir -pv $HOME/.local/share/fonts
-    # TODO Corrige função set_fonts
-    # cp -ruv $_DOT_DIR/fonts/* $HOME/.local/share/fonts/
+    cp -ruv fonts/* $HOME/.local/share/fonts/
     fc-cache -fv
 }
 
@@ -39,7 +49,7 @@ set_wallpapers() {
     echo 'Download wallpapers...'
     cd /tmp
     [[ -d wallpapers ]] && rm -rf wallpapers
-    git clone https://github.com/IsaquePFerreira/wallpapers
+    git clone "$WALLPAPERS_URL"
     echo 'Copy wallpapers...'
     mkdir -pv $HOME/Pictures/wallpapers
     cp -ruv wallpapers/* $HOME/Pictures/wallpapers/
@@ -56,12 +66,12 @@ set_configs() {
 set_home_hidden_files() {
     echo 'Copy hidden files of home...'
     for f in "$_HIDDEN_FILES_DIR/*"; do
-        # Para cada arquivo $f adiciono o '.' no inicio do nome
+        # Para cada arquivo $f adiciona o '.' no inicio do nome
         cp -ruv $f "$HOME/.${f##*/}"
     done
 
     echo 'Source bash_aliases...'
-    # Verifica se já tem o treco que faz o 'source' do arquivo bash_aliases
+    # Verifica se já tem o trecho que faz o 'source' do arquivo bash_aliases
     if grep '~/.bash_aliases' $HOME/.bashrc &> /dev/null; then
         echo 'bash_aliases is already set!'
     else
@@ -85,8 +95,6 @@ config_sys() {
     set_configs
     set_home_hidden_files
     set_bin_folder
-    bspc wm -r
-    reset && clear && neofetch
 }
 
 # Help para ser mais amigável
