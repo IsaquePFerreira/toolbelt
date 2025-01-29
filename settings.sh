@@ -1,13 +1,28 @@
 #!/bin/bash
+#
+# settings.sh
+#
+# Programa para automatizar a configuração inicial de um ambiente de
+# desenvolvimento.
+#
+# Exemplo de uso:
+# 
+# ./settings.sh --all
+#
 
+# Caminho para a pasta dotfiles no home do usuário
 _DOT_DIR="$HOME/.dotfiles"
+
+# Carrega a lista de pacotes que vão ser instalados
 source $_DOT_DIR/PACKAGES
 
+# Instala pacotes necessários
 req_pkgs() {
     echo 'Install some packages...'
     sudo apt install -y ${PACKAGES[@]}
 }
 
+# Copie fontes para diretório no home do usuário e atualiza o cache de fontes
 set_fonts() {
     echo 'Copy fonts...'
     mkdir -pv $HOME/.local/share/fonts
@@ -15,6 +30,7 @@ set_fonts() {
     fc-cache -fv
 }
 
+# Baixa wallpapers e copia para ~/Pictures
 set_wallpapers() {
     echo 'Download wallpapers...'
     cd /tmp
@@ -25,19 +41,23 @@ set_wallpapers() {
     cp -ruv wallpapers/* $HOME/Pictures/wallpapers/
 }
 
+# Copia configurações
 set_configs() {
     echo 'Set configs...'
     mkdir -pv $HOME/.config
     cp -ruv $_DOT_DIR/config/* $HOME/.config/
 }
 
+# Copia arquivos ocultos que ficam no home do usuário
 set_home_hidden_files() {
     echo 'Copy hidden files of home...'
     for f in $_DOT_DIR/home/*; do
+        # Para cada arquivo $f adiciono o '.' no inicio do nome
         cp -ruv $f "$HOME/.${f##*/}"
     done
 
     echo 'Source bash_aliases...'
+    # Verifica se já tem o treco que faz o 'source' do arquivo bash_aliases
     if grep '~/.bash_aliases' $HOME/.bashrc &> /dev/null; then
         echo 'bash_aliases is already set!'
     else
@@ -45,12 +65,14 @@ set_home_hidden_files() {
     fi
 }
 
+# Copia pasta de programas
 set_bin_folder() {
     echo 'Copy bin folder...'
     mkdir -p $HOME/.local/bin
     cp -ruv $_DOT_DIR/bin/* $HOME/.local/bin/
 }
 
+# Realizar configuração completa do sistema
 config_sys() {
     echo 'Configure system...'
     req_pkgs
@@ -63,6 +85,7 @@ config_sys() {
     reset && clear && neofetch
 }
 
+# Help para ser mais amigável
 _help() {
 cat << EOF
 
@@ -81,8 +104,10 @@ usage: ${0##*/} [flags]
 EOF
 }
 
+# Quando houver algum erro interrompe a execuççao imediatamente
 set -e
 
+# Menu maneiro :)
 case $@ in
     --all)      config_sys;;
     --install)  req_pkgs;;
