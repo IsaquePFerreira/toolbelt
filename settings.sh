@@ -11,22 +11,26 @@
 #
 
 # Caminho para a pasta dotfiles no home do usuário
-_DOT_DIR="$HOME/.dotfiles"
+_DOT_DIR="$HOME/.local/share/dotfiles"
+_CONFIG_DIR="$_DOT_DIR/config"
+_BIN_DIR="$_DOT_DIR/bin"
+_HIDDEN_FILES_DIR="$_DOT_DIR/home"
 
 # Carrega a lista de pacotes que vão ser instalados
-source $_DOT_DIR/PACKAGES
+source "$_DOT_DIR/PACKAGES"
 
 # Instala pacotes necessários
 req_pkgs() {
     echo 'Install some packages...'
-    sudo apt install -y ${PACKAGES[@]}
+    sudo apt install -y "${PACKAGES[@]}"
 }
 
 # Copie fontes para diretório no home do usuário e atualiza o cache de fontes
 set_fonts() {
     echo 'Copy fonts...'
     mkdir -pv $HOME/.local/share/fonts
-    cp -ruv $_DOT_DIR/fonts/* $HOME/.local/share/fonts/
+    # TODO Corrige função set_fonts
+    # cp -ruv $_DOT_DIR/fonts/* $HOME/.local/share/fonts/
     fc-cache -fv
 }
 
@@ -45,13 +49,13 @@ set_wallpapers() {
 set_configs() {
     echo 'Set configs...'
     mkdir -pv $HOME/.config
-    cp -ruv $_DOT_DIR/config/* $HOME/.config/
+    cp -ruv "$_CONFIG_DIR/*" $HOME/.config/
 }
 
 # Copia arquivos ocultos que ficam no home do usuário
 set_home_hidden_files() {
     echo 'Copy hidden files of home...'
-    for f in $_DOT_DIR/home/*; do
+    for f in "$_HIDDEN_FILES_DIR/*"; do
         # Para cada arquivo $f adiciono o '.' no inicio do nome
         cp -ruv $f "$HOME/.${f##*/}"
     done
@@ -69,7 +73,7 @@ set_home_hidden_files() {
 set_bin_folder() {
     echo 'Copy bin folder...'
     mkdir -p $HOME/.local/bin
-    cp -ruv $_DOT_DIR/bin/* $HOME/.local/bin/
+    cp -ruv "$_BIN_DIR/*" $HOME/.local/bin/
 }
 
 # Realizar configuração completa do sistema
