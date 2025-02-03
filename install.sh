@@ -1,38 +1,24 @@
 #!/bin/bash
 #
-# settings.sh
+# install.sh
 #
 # Programa para automatizar a configuração inicial de um ambiente de
 # desenvolvimento.
 #
 # Exemplo de uso:
 # 
-# ./settings.sh --all
+# ./install.sh --all
 #
 
 ############
-# VARIABLES
+# VARIÁVEIS
 ############
-# Caminho para a pasta dotfiles no home do usuário
-_DOT_DIR="$HOME/.local/share/dotfiles"
-_CONFIG_DIR="$_DOT_DIR/config"
-_BIN_DIR="$_DOT_DIR/bin"
-_HIDDEN_FILES_DIR="$_DOT_DIR/home"
-
 # Urls
 FONTS_URL="https://github.com/IsaquePFerreira/fonts"
 WALLPAPERS_URL="https://github.com/IsaquePFerreira/wallpapers"
 
-# Carrega a lista de pacotes que vão ser instalados
-source "$_DOT_DIR/PACKAGES"
-
-# Instala pacotes necessários
-req_pkgs() {
-    echo 'Install some packages...'
-    sudo apt install -y "${PACKAGES[@]}"
-}
-
-# Copie fontes para diretório no home do usuário e atualiza o cache de fontes
+# Baixa e copia as fontes para diretório no home do usuário e
+# atualiza o cache de fontes
 set_fonts() {
     echo 'Download fonts...'
     cd /tmp
@@ -59,17 +45,18 @@ set_wallpapers() {
 set_configs() {
     echo 'Set configs...'
     mkdir -pv $HOME/.config
-    cp -ruv "$_CONFIG_DIR/*" $HOME/.config/
+    cp -ruv config/* $HOME/.config/
 }
 
 # Copia arquivos ocultos que ficam no home do usuário
 set_home_hidden_files() {
     echo 'Copy hidden files of home...'
-    for f in "$_HIDDEN_FILES_DIR/*"; do
+    for f in home/*; do
         # Para cada arquivo $f adiciona o '.' no inicio do nome
         cp -ruv $f "$HOME/.${f##*/}"
     done
 
+    # Adiciona o source para arquivo bash_aliases
     echo 'Source bash_aliases...'
     # Verifica se já tem o trecho que faz o 'source' do arquivo bash_aliases
     if grep '~/.bash_aliases' $HOME/.bashrc &> /dev/null; then
@@ -81,15 +68,14 @@ set_home_hidden_files() {
 
 # Copia pasta de programas
 set_bin_folder() {
-    echo 'Copy bin folder...'
+    echo 'Copy scripts to ~/.local/bin...'
     mkdir -p $HOME/.local/bin
-    cp -ruv "$_BIN_DIR/*" $HOME/.local/bin/
+    cp -ruv bin/* $HOME/.local/bin/
 }
 
 # Realizar configuração completa do sistema
 config_sys() {
     echo 'Configure system...'
-    req_pkgs
     set_fonts
     set_wallpapers
     set_configs
@@ -106,8 +92,6 @@ usage: ${0##*/} [flags]
   Options:
 
     --all            Complete config system
-    --install        Install required packages
-    --keyboard       Set keyboard settings
     --config         Set ~/.config
     --home           Set home hidden files
     --bin            Set scripts folder
@@ -116,14 +100,12 @@ usage: ${0##*/} [flags]
 EOF
 }
 
-# Quando houver algum erro interrompe a execuççao imediatamente
+# Quando houver algum erro interrompe a execução imediatamente
 set -e
 
 # Menu maneiro :)
 case $@ in
     --all)      config_sys;;
-    --install)  req_pkgs;;
-    --keyboard) set_keys;;
     --config)   set_configs;;
     --home)     set_home_hidden_files;;
     --bin)      set_bin_folder;;
