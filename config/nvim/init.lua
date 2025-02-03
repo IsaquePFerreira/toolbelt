@@ -22,6 +22,7 @@ vim.opt.confirm = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
+vim.opt.guicursor = ""
 
 -- Plugins {{{1
 vim.cmd([[
