@@ -1,4 +1,4 @@
 # toolbelt
 
-Tudo que eu preciso é do $SHELL
+Meu sinto de utilidades para sysadmin
 
