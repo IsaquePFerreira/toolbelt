@@ -1,6 +1,6 @@
 [[ -d "$HOME/.cargo/bin" ]] && PATH="$HOME/.cargo/bin:$PATH"
 
-# export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
+export PS1='\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] '
 
 export TERM="xterm-256color"
 export TERMCMD="sakura"
