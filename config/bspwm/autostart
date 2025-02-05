@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+run() {
+	if ! pgrep -f $1; then
+		$@&
+	fi
+}
+
+nitrogen --restore
+run dunst -config $HOME/.config/bspwm/dunst/dunstrc
+run picom --config $HOME/.config/bspwm/picom/picom.conf
+run $HOME/.config/bspwm/polybar/launch.sh
+# xset s off
+# xset -dpms
+xbacklight -set 85
+xsetroot -cursor_name left_ptr
+
