@@ -1,4 +1,4 @@
 # toolbelt
 
-Meu sinto de utilidades para sysadmin
+Meu cinto de utilidades para sysadmin
 
